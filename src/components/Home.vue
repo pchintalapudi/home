@@ -1,19 +1,13 @@
 <template>
   <main :dark-mode="darkMode">
-    <nav>
-      <span class="grow"></span>
-      <span>
-        <theme-switcher-vue class="dark-mode-switcher"></theme-switcher-vue>
-      </span>
-    </nav>
-    <h1></h1>
+    <title-vue></title-vue>
   </main>
 </template>
 <script lang="ts">
 import Vue from "vue";
-import ThemeSwitcherVue from "./ThemeSwitcher.vue";
+import TitleVue from "./pages/Title.vue";
 export default Vue.extend({
-  components: { ThemeSwitcherVue },
+  components: { TitleVue },
   computed: {
     darkMode(): boolean {
       return this.$store.state.darkMode;
@@ -31,6 +25,7 @@ export default Vue.extend({
   box-sizing: border-box;
   background-color: transparent;
   flex-flow: column nowrap;
+  align-items: center;
 }
 head,
 style,
@@ -43,32 +38,53 @@ main {
   height: 100vh;
   width: 100vw;
 }
-nav {
-  flex-flow: row wrap;
-  padding: 10px;
-}
 .grow {
   flex: 1;
 }
-.dark-mode-switcher {
-  transform: scale(0.5, 0.5);
-}
 main {
-  --back-color: white;
-  --fore-color: black;
-  --track-color: #dddddd;
-  background-color: var(--back-color);
-  color: var(--fore-color);
+  --back-color: 255, 255, 255;
+  --fore-color: 0, 0, 0;
+  --track-color: 222, 222, 222;
+  --level-1: 0.05;
+  --level-2: 0.07;
+  --level-3: 0.08;
+  --level-4: 0.09;
+  --level-5: 0.11;
+  --level-6: 0.12;
+  --level-7: 0.14;
+  --level-8: 0.15;
+  --level-9: 0.16;
+  --blue: 18, 96, 160;
+  --green: 0, 144, 64;
+  --yellow: 255, 208, 0;
+  --red: 206, 32, 32;
+  background-color: rgb(var(--back-color));
+  color: rgb(var(--fore-color));
   transition: background-color 300ms, color 300ms;
 }
 input {
-  background-color: var(--back-color);
-  color: var(--fore-color);
+  background-color: rgb(var(--back-color));
+  color: rgb(var(--fore-color));
   transition: background-color 300ms, color 300ms;
 }
 main[dark-mode] {
-  --back-color: #121212;
-  --fore-color: #ffffffde;
-  --track-color: #222222;
+  --back-color: 18, 18, 18;
+  --fore-color: 222, 222, 222;
+  --track-color: 34, 34, 34;
+  --blue: 0, 136, 255;
+  --green: 8, 242, 142;
+  --yellow: 253, 253, 102;
+  --red: 220, 60, 60;
+}
+html {
+  font-family: "Merriweather", serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rubik", sans-serif;
 }
 </style>

@@ -8,5 +8,3 @@ export default Vue.extend({
   components: { HomeVue },
 });
 </script>
-<style>
-</style>
