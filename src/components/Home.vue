@@ -61,6 +61,7 @@ main {
   background-color: rgb(var(--back-color));
   color: rgb(var(--fore-color));
   transition: background-color 300ms, color 300ms;
+  overflow:auto;
 }
 input {
   background-color: rgb(var(--back-color));

@@ -8,17 +8,58 @@
       </span>
     </nav>
     <article class="summary">
-      <div tooltip="Education">
-        <i class="icon graduation-cap"></i>
+      <div class="cards">
+        <icon-vue tooltip="Education">
+          <i class="graduation-cap"></i>
+        </icon-vue>
+        <card-vue :card-title="'Undergraduate'" :content="'Massachusetts Institute of Technology'"></card-vue>
+        <card-vue :card-title="'High School'" :content="'Dougherty Valley High School'"></card-vue>
       </div>
-      <div tooltip="Work Experience">
-        <i class="icon laptop"></i>
+      <div class="cards">
+        <icon-vue tooltip="Work Experience">
+          <i class="laptop"></i>
+        </icon-vue>
+        <card-vue :card-title="'Software Engineering Intern'" :content="'McAfee LLC'"></card-vue>
+        <card-vue
+          :card-title="'Undergraduate Researcher'"
+          :content="'Broad Institute of MIT and Harvard'"
+        ></card-vue>
+        <card-vue
+          :card-title="'Undergraduate Summer Intern R&D'"
+          :content="'Sandia National Laboratories'"
+        ></card-vue>
+        <card-vue
+          :card-title="'Undergraduate Researcher'"
+          :content="'Koch Institute for Integrative Cancer Research'"
+        ></card-vue>
       </div>
-      <div tooltip="Personal Projects">
-        <i class="icon clock"></i>
+      <div class="cards">
+        <icon-vue tooltip="Personal Projects">
+          <i class="clock"></i>
+        </icon-vue>
+        <card-vue :card-title="'This website'" :content="'Vue.js/Typescript'"></card-vue>
+        <card-vue :card-title="'Mini Virtual Machine'" :content="'C++'"></card-vue>
+        <card-vue :card-title="'Course Planning Website'" :content="'Vue.js/Typescript'"></card-vue>
+        <card-vue :card-title="'Molecule Drawer'" :content="'Vue.js/Typescript'"></card-vue>
+        <card-vue :card-title="'VEX Robotics Simulator'" :content="'Java'"></card-vue>
       </div>
-      <div tooltip="Skills">
-        <i class="icon hammer"></i>
+      <div class="cards">
+        <icon-vue tooltip="Skills">
+          <i class="hammer"></i>
+        </icon-vue>
+        <card-vue :card-title="'Java'"></card-vue>
+        <card-vue :card-title="'Python'"></card-vue>
+        <card-vue :card-title="'SQL'"></card-vue>
+        <card-vue :card-title="'C/C++'"></card-vue>
+        <card-vue :card-title="'Typescript'"></card-vue>
+        <card-vue :card-title="'Javascript'"></card-vue>
+        <card-vue :card-title="'HTML/CSS'"></card-vue>
+        <card-vue :card-title="'Cell Culture'"></card-vue>
+        <card-vue :card-title="'Transfection'"></card-vue>
+        <card-vue :card-title="'Pipetting'"></card-vue>
+        <card-vue :card-title="'CRISPRa/i'"></card-vue>
+        <card-vue :card-title="'Antibody Staining'"></card-vue>
+        <card-vue :card-title="'Western Blot'"></card-vue>
       </div>
     </article>
   </section>
@@ -26,8 +67,10 @@
 <script lang="ts">
 import Vue from "vue";
 import ThemeSwitcherVue from "../ThemeSwitcher.vue";
+import IconVue from "../utils/Icon.vue";
+import CardVue from "../utils/Card.vue";
 export default Vue.extend({
-  components: { "theme-switcher-vue": ThemeSwitcherVue },
+  components: { ThemeSwitcherVue, IconVue, CardVue },
 });
 </script>
 <style>
@@ -43,24 +86,7 @@ h1 {
   font-size: 2.5em;
 }
 .title-page {
-    min-height: 100vh;
-}
-.icon {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  background-color: rgba(var(--fore-color), var(--level-1));
-  transition: background-color 300ms;
-  border-radius: 50%;
-  transform: scale(2, 2);
-  margin: 0 22px;
-  cursor: pointer;
-}
-.icon:hover {
-    background-color: rgba(var(--fore-color), var(--level-2));
-}
-.icon:active {
-    background-color: rgba(var(--fore-color), var(--level-5));
+  min-height: 100vh;
 }
 .laptop::before {
   content: "";
@@ -139,18 +165,26 @@ h1 {
   transition: background-color 300ms;
 }
 .hammer::after {
-    content:"";
-    height:10px;
-    width:17.5px;
-    background-color: rgb(var(--red));
-    border-radius: 2.5px;
-    transform: rotate(45deg) translateX(8.5px);
-    transition: background-color 300ms;
+  content: "";
+  height: 10px;
+  width: 17.5px;
+  background-color: rgb(var(--red));
+  border-radius: 2.5px;
+  transform: rotate(45deg) translateX(8.5px);
+  transition: background-color 300ms;
 }
 .summary {
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    width: 100vw;
-    padding: 20px;
+  justify-content: space-evenly;
+  width: 100vw;
+  padding: 20px;
+  flex: 1;
+  align-items: stretch;
+}
+.summary > .cards {
+  flex-flow: row nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-height: 88px;
+  flex: 1;
 }
 </style>
