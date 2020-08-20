@@ -1,5 +1,5 @@
 <template>
-  <a class="icon" :style="`--scale:${scale}`">
+  <a class="icon" :style="`--scale:${scale};--margin:${margin}px;--link-color:${color};`">
     <slot></slot>
   </a>
 </template>
@@ -8,10 +8,17 @@ import Vue from "vue";
 export default Vue.extend({
   props: {
     iconScale: Number,
+    linkColor:String
   },
   computed:{
       scale():number {
           return this.iconScale || 2;
+      },
+      margin():number {
+          return (this.scale - 1) * 22;
+      },
+      color():string {
+          return this.linkColor || "var(--fore-color)";
       }
   }
 });
@@ -25,7 +32,7 @@ export default Vue.extend({
   background-color: rgb(var(--back-color));
   padding: 5px;
   border-radius: 10px;
-  border: 1px solid rgb(var(--fore-color));
+  border: 1px solid rgb(var(--link-color));
   opacity: 0;
   transition: opacity 300ms, background-color 300ms;
   right: 0;
@@ -46,10 +53,12 @@ export default Vue.extend({
   transition: background-color 300ms;
   border-radius: 50%;
   transform: scale(var(--scale), var(--scale));
-  margin: 22px 22px;
+  margin: var(--margin);
+  align-items: center;
 }
 .icon:any-link {
   cursor: pointer;
+  color: rgb(var(--fore-color));
 }
 .icon:any-link:hover {
   background-color: rgba(var(--fore-color), var(--level-2));

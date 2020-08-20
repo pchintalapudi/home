@@ -1,0 +1,149 @@
+[
+    {
+        "Year": 2018,
+        "Prior Credit": [
+            {
+                "id": "5.111",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "5.12",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "7.012",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "8.01",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "18.01",
+                "classification": "Both"
+            },
+            {
+                "id": "18.02",
+                "classification": "Both"
+            }
+        ],
+        "Fall": [
+            {
+                "id": "3.986",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "6.0001",
+                "classification": "Computers"
+            },
+            {
+                "id": "7.03",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "8.02",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "18.03",
+                "classification": "Bioengineering"
+            }
+        ]
+    },
+    {
+        "Year": 2019,
+        "IAP": [
+            {
+                "id": "6.057",
+                "classification": "Computers"
+            },
+            {
+                "id": "6.179",
+                "classification": "Computers"
+            }
+        ],
+        "Spring": [
+            {
+                "id": "6.0002",
+                "classification": "Computers"
+            },
+            {
+                "id": "6.009",
+                "classification": "Computers"
+            },
+            {
+                "id": "7.05",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "9.00",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "18.06",
+                "classification": "Both"
+            }
+        ],
+        "Fall": [
+            {
+                "id": "5.13",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "5.310",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "6.004",
+                "classification": "Computers"
+            },
+            {
+                "id": "6.006",
+                "classification": "Computers"
+            },
+            {
+                "id": "20.110",
+                "classification": "Bioengineering"
+            }
+        ]
+    },
+    {
+        "Year": 2020,
+        "Spring": [
+            {
+                "id": "6.031",
+                "classification": "Computers"
+            },
+            {
+                "id": "6.036",
+                "classification": "Both"
+            },
+            {
+                "id": "6.08",
+                "classification": "Computers"
+            },
+            {
+                "id": "18.600",
+                "classification": "Computers"
+            }
+        ],
+        "Fall": [
+            {
+                "id": "6.046",
+                "classification": "Computers"
+            },
+            {
+                "id": "6.172",
+                "classification": "Computers"
+            },
+            {
+                "id": "20.109",
+                "classification": "Bioengineering"
+            },
+            {
+                "id": "20.320",
+                "classification": "Bioengineering"
+            }
+        ]
+    }
+]

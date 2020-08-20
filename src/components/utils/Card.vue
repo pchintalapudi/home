@@ -1,5 +1,5 @@
 <template>
-  <a class="card">
+  <a class="card" :style="`--link-color:${color}`">
     <icon-vue :icon-scale="iconScale" v-if="$slots.default">
       <slot></slot>
     </icon-vue>
@@ -15,8 +15,14 @@ export default Vue.extend({
   props: {
     cardTitle: String,
     content: String,
-    iconScale:Number
+    iconScale:Number,
+    linkColor:String
   },
+  computed:{
+      color():string {
+          return this.linkColor || "var(--fore-color)";
+      }
+  }
 });
 </script>
 <style scoped>
@@ -29,5 +35,16 @@ export default Vue.extend({
 }
 .card>* {
     padding: 5px;
+}
+.card:any-link {
+    color:rgb(var(--fore-color));
+    transition: color 300ms;
+    text-decoration: none;
+}
+.card:any-link:hover {
+    color:rgb(var(--link-color));
+}
+[out-link].card:any-link>h3 {
+    text-decoration: underline;
 }
 </style>

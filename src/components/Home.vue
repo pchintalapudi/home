@@ -1,13 +1,17 @@
 <template>
   <main :dark-mode="darkMode">
     <title-vue></title-vue>
+    <education-vue></education-vue>
+    <projects-vue></projects-vue>
   </main>
 </template>
 <script lang="ts">
 import Vue from "vue";
 import TitleVue from "./pages/Title.vue";
+import EducationVue from "./pages/Education.vue";
+import ProjectsVue from "./pages/Projects.vue";
 export default Vue.extend({
-  components: { TitleVue },
+  components: { TitleVue, ProjectsVue, EducationVue },
   computed: {
     darkMode(): boolean {
       return this.$store.state.darkMode;
@@ -25,7 +29,6 @@ export default Vue.extend({
   box-sizing: border-box;
   background-color: transparent;
   flex-flow: column nowrap;
-  align-items: center;
 }
 head,
 style,
@@ -37,6 +40,7 @@ body,
 main {
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 .grow {
   flex: 1;
@@ -44,7 +48,7 @@ main {
 main {
   --back-color: 255, 255, 255;
   --fore-color: 0, 0, 0;
-  --track-color: 222, 222, 222;
+  --track-color: 244, 244, 244;
   --level-1: 0.05;
   --level-2: 0.07;
   --level-3: 0.08;
@@ -56,14 +60,15 @@ main {
   --level-9: 0.16;
   --blue: 18, 96, 160;
   --green: 0, 144, 64;
-  --yellow: 255, 208, 0;
+  --yellow: 196, 144, 0;
   --red: 206, 32, 32;
   background-color: rgb(var(--back-color));
   color: rgb(var(--fore-color));
   transition: background-color 300ms, color 300ms;
-  overflow:auto;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
-input {
+input, button {
   background-color: rgb(var(--back-color));
   color: rgb(var(--fore-color));
   transition: background-color 300ms, color 300ms;
@@ -71,7 +76,7 @@ input {
 main[dark-mode] {
   --back-color: 18, 18, 18;
   --fore-color: 222, 222, 222;
-  --track-color: 34, 34, 34;
+  --track-color: 29, 29, 29;
   --blue: 0, 136, 255;
   --green: 8, 242, 142;
   --yellow: 253, 253, 102;

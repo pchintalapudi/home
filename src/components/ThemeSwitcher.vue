@@ -53,7 +53,7 @@ export default Vue.extend({
     position: absolute;
     height: 44px;
     width: 44px;
-    transform: scale(0.875, 0.875) rotate(22.5deg) translate(-25px, 20px);
+    transform: scale(0.875, 0.875) rotate(22.5deg) translate(15px, 2.5px);
 }
 .sun::before {
     transform: rotate(45deg) scale(1.25, 1.25);
@@ -87,13 +87,13 @@ export default Vue.extend({
     border-radius: 50%;
     border-color: transparent;
     background-color: rgb(var(--fore-color));
-    transform: translate(30px, 7px);
+    transform: translate(65px, 7px);
 }
 .sun[moon]::before {
     opacity: 0;
 }
 .sun[moon]::after {
     border-color: transparent;
-    transform: scale(1, 1) translateX(10px);
+    transform: translateX(10px);
 }
 </style>

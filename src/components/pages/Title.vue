@@ -9,57 +9,103 @@
     </nav>
     <article class="summary">
       <div class="cards">
-        <icon-vue tooltip="Education">
+        <icon-vue tooltip="Education" :link-color="'var(--blue)'" href="#education">
           <i class="graduation-cap"></i>
         </icon-vue>
-        <card-vue :card-title="'Undergraduate'" :content="'Massachusetts Institute of Technology'"></card-vue>
-        <card-vue :card-title="'High School'" :content="'Dougherty Valley High School'"></card-vue>
+        <card-vue
+          :card-title="'Undergraduate'"
+          :content="'Massachusetts Institute of Technology'"
+          href="#undergrad"
+          :linkColor="'var(--blue)'"
+        ></card-vue>
+        <card-vue
+          :card-title="'High School'"
+          :content="'Dougherty Valley High School'"
+          href="#highschool"
+          :linkColor="'var(--blue)'"
+        ></card-vue>
       </div>
       <div class="cards">
-        <icon-vue tooltip="Work Experience">
+        <icon-vue tooltip="Work Experience" :linkColor="'var(--green)'" href="#work">
           <i class="laptop"></i>
         </icon-vue>
-        <card-vue :card-title="'Software Engineering Intern'" :content="'McAfee LLC'"></card-vue>
+        <card-vue
+          :card-title="'Software Engineering Intern'"
+          :content="'McAfee LLC'"
+          href="#"
+          :linkColor="'var(--green)'"
+        ></card-vue>
         <card-vue
           :card-title="'Undergraduate Researcher'"
           :content="'Broad Institute of MIT and Harvard'"
+          href="#"
+          :linkColor="'var(--green)'"
         ></card-vue>
         <card-vue
           :card-title="'Undergraduate Summer Intern R&D'"
           :content="'Sandia National Laboratories'"
+          href="#"
+          :linkColor="'var(--green)'"
         ></card-vue>
         <card-vue
           :card-title="'Undergraduate Researcher'"
           :content="'Koch Institute for Integrative Cancer Research'"
+          href="#"
+          :linkColor="'var(--green)'"
         ></card-vue>
       </div>
       <div class="cards">
-        <icon-vue tooltip="Personal Projects">
+        <icon-vue tooltip="Personal Projects" href="#projects" :linkColor="'var(--yellow)'">
           <i class="clock"></i>
         </icon-vue>
-        <card-vue :card-title="'This website'" :content="'Vue.js/Typescript'"></card-vue>
-        <card-vue :card-title="'Mini Virtual Machine'" :content="'C++'"></card-vue>
-        <card-vue :card-title="'Course Planning Website'" :content="'Vue.js/Typescript'"></card-vue>
-        <card-vue :card-title="'Molecule Drawer'" :content="'Vue.js/Typescript'"></card-vue>
-        <card-vue :card-title="'VEX Robotics Simulator'" :content="'Java'"></card-vue>
+        <card-vue
+          :card-title="'This website'"
+          :content="'Vue.js/Typescript'"
+          href="#website"
+          :linkColor="'var(--yellow)'"
+        ></card-vue>
+        <card-vue
+          :card-title="'Mini Virtual Machine'"
+          :content="'C++'"
+          href="#vm"
+          :linkColor="'var(--yellow)'"
+        ></card-vue>
+        <card-vue
+          :card-title="'Course Planning Website'"
+          :content="'Vue.js/Typescript'"
+          href="#planning"
+          :linkColor="'var(--yellow)'"
+        ></card-vue>
+        <card-vue
+          :card-title="'Molecule Drawer'"
+          :content="'Vue.js/Typescript'"
+          href="#drawer"
+          :linkColor="'var(--yellow)'"
+        ></card-vue>
+        <card-vue
+          :card-title="'VEX Robotics Simulator'"
+          :content="'Java'"
+          href="#simulator"
+          :linkColor="'var(--yellow)'"
+        ></card-vue>
       </div>
       <div class="cards">
-        <icon-vue tooltip="Skills">
+        <icon-vue tooltip="Skills" :linkColor="'var(--red)'" href="#skills">
           <i class="hammer"></i>
         </icon-vue>
-        <card-vue :card-title="'Java'"></card-vue>
-        <card-vue :card-title="'Python'"></card-vue>
-        <card-vue :card-title="'SQL'"></card-vue>
-        <card-vue :card-title="'C/C++'"></card-vue>
-        <card-vue :card-title="'Typescript'"></card-vue>
-        <card-vue :card-title="'Javascript'"></card-vue>
-        <card-vue :card-title="'HTML/CSS'"></card-vue>
-        <card-vue :card-title="'Cell Culture'"></card-vue>
-        <card-vue :card-title="'Transfection'"></card-vue>
-        <card-vue :card-title="'Pipetting'"></card-vue>
-        <card-vue :card-title="'CRISPRa/i'"></card-vue>
-        <card-vue :card-title="'Antibody Staining'"></card-vue>
-        <card-vue :card-title="'Western Blot'"></card-vue>
+        <card-vue :card-title="'Java'" href="#" :linkColor="'var(--red)'"></card-vue>
+        <card-vue :card-title="'Python'" href="#" :linkColor="'var(--red)'"></card-vue>
+        <card-vue :card-title="'SQL'" href="#" :linkColor="'var(--red)'"></card-vue>
+        <card-vue :card-title="'C/C++'" href="#" :linkColor="'var(--red)'"></card-vue>
+        <card-vue :card-title="'Typescript'" href="#" :linkColor="'var(--red)'"></card-vue>
+        <card-vue :card-title="'Javascript'" href="#" :linkColor="'var(--red)'"></card-vue>
+        <card-vue :card-title="'HTML/CSS'" href="#" :linkColor="'var(--red)'"></card-vue>
+        <card-vue :card-title="'Cell Culture'" href="#" :linkColor="'var(--green)'"></card-vue>
+        <card-vue :card-title="'Transfection'" href="#" :linkColor="'var(--green)'"></card-vue>
+        <card-vue :card-title="'Pipetting'" href="#" :linkColor="'var(--green)'"></card-vue>
+        <card-vue :card-title="'CRISPRa/i'" href="#" :linkColor="'var(--green)'"></card-vue>
+        <card-vue :card-title="'Antibody Staining'" href="#" :linkColor="'var(--green)'"></card-vue>
+        <card-vue :card-title="'Western Blot'" href="#" :linkColor="'var(--green)'"></card-vue>
       </div>
     </article>
   </section>
@@ -120,7 +166,7 @@ h1 {
   transition: background-color 300ms;
   height: 10px;
   width: 19.5px;
-  transform: translateY(20px);
+  transform: translate(-10px, 20px);
   border-bottom-left-radius: 5px 2px;
   border-bottom-right-radius: 5px 2px;
 }
@@ -130,9 +176,9 @@ h1 {
   height: 10px;
   width: 20px;
   background-color: rgb(var(--blue));
-  box-shadow: -7.5px 5.5px 0 0px rgb(var(--back-color));
+  box-shadow: -7.5px 5.5px 0 0px rgb(var(--track-color));
   transition: background-color 300ms, box-shadow 300ms;
-  transform: translateY(10px) rotate(-10deg) skewX(60deg)
+  transform: translate(-10px, 10px) rotate(-10deg) skewX(60deg)
     rotate3d(1, 0, 0, 45deg);
 }
 .clock::before {
@@ -152,7 +198,7 @@ h1 {
   box-sizing: border-box;
   border-left: 2px solid rgb(var(--yellow));
   border-bottom: 2px solid rgb(var(--yellow));
-  transform: translate(-1px, -6px) rotate(135deg);
+  transform: translate(7.5px, -5.5px) rotate(135deg);
   transition: border-color 300ms;
 }
 .hammer::before {
@@ -186,5 +232,6 @@ h1 {
   overflow-y: hidden;
   min-height: 88px;
   flex: 1;
+  align-items: center;
 }
 </style>
