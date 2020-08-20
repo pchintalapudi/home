@@ -79,7 +79,7 @@ main[dark-mode] {
   --track-color: 29, 29, 29;
   --blue: 0, 136, 255;
   --green: 8, 242, 142;
-  --yellow: 253, 253, 102;
+  --yellow: 220, 220, 80;
   --red: 220, 60, 60;
 }
 html {

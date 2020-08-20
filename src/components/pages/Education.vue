@@ -21,7 +21,8 @@
                 :year="year.year"
                 :term="term"
                 :id="cls.id"
-                @describe-class="descriptorProps = {...$event, theme:'bio'}"
+                @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'bio'}"
+                :upcoming="upcoming(year.year, term)"
               ></class-card-vue>
             </section>
             <section class="both">
@@ -31,7 +32,8 @@
                 :year="year.year"
                 :term="term"
                 :id="cls.id"
-                @describe-class="descriptorProps = {...$event, theme:'both'}"
+                @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'both'}"
+                :upcoming="upcoming(year.year, term)"
               ></class-card-vue>
             </section>
             <section class="cs">
@@ -41,14 +43,15 @@
                 :year="year.year"
                 :term="term"
                 :id="cls.id"
-                @describe-class="descriptorProps = {...$event, theme:'cs'}"
+                @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'cs'}"
+                :upcoming="upcoming(year.year, term)"
               ></class-card-vue>
             </section>
           </section>
         </section>
         <transition name="descriptor">
           <class-descriptor-vue
-          :class="descriptorProps.theme"
+            :class="descriptorProps.theme"
             v-bind="descriptorProps"
             @close-descriptor="descriptorProps.id=''"
             v-if="descriptorProps.id && descriptorProps.title"
@@ -73,7 +76,7 @@ export default Vue.extend({
         id: "",
         term: "",
         year: 0,
-        theme:""
+        theme: "",
       },
     };
   },
@@ -113,6 +116,29 @@ export default Vue.extend({
       }
       return out;
     },
+    upcoming(year: number, term: string) {
+      let current = new Date();
+      let compare = new Date();
+      switch (term) {
+        case "Spring":
+          compare.setFullYear(year, 6, 1);
+          break;
+        case "IAP":
+          compare.setFullYear(year, 2, 1);
+          break;
+        case "Fall":
+          compare.setFullYear(year + 1, 1, 1);
+          break;
+        case "Summer":
+          compare.setFullYear(year, 9, 1);
+          break;
+      }
+      console.log(current);
+      console.log(compare);
+      console.log(current < compare);
+      console.log("Check date for year " + year + " and term " + term);
+      return current < compare;
+    },
   },
 });
 </script>
@@ -123,6 +149,7 @@ h2 {
 .headers {
   flex-flow: row nowrap;
   align-self: stretch;
+  padding: 10px 0;
 }
 .headers > * {
   width: 33%;
@@ -133,6 +160,10 @@ h2 {
 .classes {
   align-self: stretch;
   position: relative;
+}
+.courses {
+  flex-flow: column-reverse nowrap;
+  padding: 10px 0;
 }
 #education {
   align-items: center;
@@ -162,6 +193,9 @@ h2 {
 }
 .cs {
   --link-color: var(--red);
+}
+.upcoming, [upcoming] {
+  --link-color: var(--blue);
 }
 .descriptor {
   position: fixed;
