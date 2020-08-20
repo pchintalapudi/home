@@ -21,7 +21,6 @@
         <card-vue
           :card-title="'High School'"
           :content="'Dougherty Valley High School'"
-          href="#highschool"
           :linkColor="'var(--blue)'"
         ></card-vue>
       </div>
@@ -233,5 +232,8 @@ h1 {
   min-height: 88px;
   flex: 1;
   align-items: center;
+}
+.summary>.cards .icon:not([href="#skills"])~.card {
+    min-width: 200px;
 }
 </style>

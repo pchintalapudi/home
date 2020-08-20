@@ -55,7 +55,7 @@
         "IAP": [
             {
                 "id": "6.057",
-                "classification": "Computers"
+                "classification": "Both"
             },
             {
                 "id": "6.179",
@@ -65,7 +65,7 @@
         "Spring": [
             {
                 "id": "6.0002",
-                "classification": "Computers"
+                "classification": "Both"
             },
             {
                 "id": "6.009",
@@ -130,7 +130,7 @@
         "Fall": [
             {
                 "id": "6.046",
-                "classification": "Computers"
+                "classification": "Both"
             },
             {
                 "id": "6.172",

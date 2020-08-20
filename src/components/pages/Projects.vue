@@ -7,8 +7,8 @@
     <section class="cards">
         <card-vue id="website" :cardTitle="'This website'" :content="'A spiel about this website'"></card-vue>
         <card-vue id="vm" :cardTitle="'Mini Virtual Machine'" :content="'A spiel about this website'"></card-vue>
-        <card-vue id="planning" :cardTitle="'Course Planner'" :content="'A spiel about this website'" :linkColor="'var(--green)'" out-link href="https://pchintalapudi.github.io/courses"></card-vue>
-        <card-vue id="drawer" :cardTitle="'Molecule Drawer'" :content="'A spiel about this website'" :linkColor="'var(--green)'" out-link href="https://pchintalapudi.github.io/mdraw"></card-vue>
+        <card-vue id="planning" :cardTitle="'Course Planner'" :content="'A spiel about this website'" :linkColor="'var(--green)'" target="_blank" href="https://pchintalapudi.github.io/courses"></card-vue>
+        <card-vue id="drawer" :cardTitle="'Molecule Drawer'" :content="'A spiel about this website'" :linkColor="'var(--green)'" target="_blank" href="https://pchintalapudi.github.io/mdraw"></card-vue>
         <card-vue id="simulator" :cardTitle="'VEX Simulator'" :content="'A spiel about this website'"></card-vue>
     </section>
   </article>

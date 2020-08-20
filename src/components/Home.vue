@@ -2,6 +2,7 @@
   <main :dark-mode="darkMode">
     <title-vue></title-vue>
     <education-vue></education-vue>
+    <work-vue></work-vue>
     <projects-vue></projects-vue>
   </main>
 </template>
@@ -9,9 +10,10 @@
 import Vue from "vue";
 import TitleVue from "./pages/Title.vue";
 import EducationVue from "./pages/Education.vue";
+import WorkVue from "./pages/Work.vue";
 import ProjectsVue from "./pages/Projects.vue";
 export default Vue.extend({
-  components: { TitleVue, ProjectsVue, EducationVue },
+  components: { TitleVue, ProjectsVue, EducationVue, WorkVue },
   computed: {
     darkMode(): boolean {
       return this.$store.state.darkMode;
@@ -48,6 +50,7 @@ main {
 main {
   --back-color: 255, 255, 255;
   --fore-color: 0, 0, 0;
+  --text-color: 0, 0, 0;
   --track-color: 244, 244, 244;
   --level-1: 0.05;
   --level-2: 0.07;
@@ -63,24 +66,32 @@ main {
   --yellow: 196, 144, 0;
   --red: 206, 32, 32;
   background-color: rgb(var(--back-color));
-  color: rgb(var(--fore-color));
+  color: rgb(var(--text-color));
   transition: background-color 300ms, color 300ms;
   overflow-y: auto;
   scroll-behavior: smooth;
 }
 input, button {
   background-color: rgb(var(--back-color));
-  color: rgb(var(--fore-color));
+  color: rgb(var(--text-color));
   transition: background-color 300ms, color 300ms;
 }
 main[dark-mode] {
   --back-color: 18, 18, 18;
   --fore-color: 222, 222, 222;
   --track-color: 29, 29, 29;
+  --text-color: 153, 153, 153;
   --blue: 0, 136, 255;
   --green: 8, 242, 142;
   --yellow: 220, 220, 80;
   --red: 220, 60, 60;
+}
+main>* {
+    flex-shrink: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    color:rgb(var(--fore-color));
+    transition: color 300ms;
 }
 html {
   font-family: "Merriweather", serif;
@@ -92,5 +103,10 @@ h4,
 h5,
 h6 {
   font-family: "Rubik", sans-serif;
+}
+@media (max-width:500px) {
+    html {
+        font-size: 0.8em;
+    }
 }
 </style>

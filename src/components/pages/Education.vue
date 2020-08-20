@@ -13,7 +13,12 @@
       </section>
       <article class="courses">
         <section v-for="year in correctedClasses" :key="year.year" class="empty">
-          <section v-for="{term, classes} in year.terms" :key="`${year.year}-${term}`" class="row">
+          <section
+            v-for="{term, classes} in year.terms"
+            :key="`${year.year}-${term}`"
+            class="row"
+            :upcoming="upcoming(year.year, term)"
+          >
             <section class="bio">
               <class-card-vue
                 v-for="cls in classes.bio"
@@ -22,7 +27,6 @@
                 :term="term"
                 :id="cls.id"
                 @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'bio'}"
-                :upcoming="upcoming(year.year, term)"
               ></class-card-vue>
             </section>
             <section class="both">
@@ -33,7 +37,6 @@
                 :term="term"
                 :id="cls.id"
                 @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'both'}"
-                :upcoming="upcoming(year.year, term)"
               ></class-card-vue>
             </section>
             <section class="cs">
@@ -44,7 +47,6 @@
                 :term="term"
                 :id="cls.id"
                 @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'cs'}"
-                :upcoming="upcoming(year.year, term)"
               ></class-card-vue>
             </section>
           </section>
@@ -132,11 +134,9 @@ export default Vue.extend({
         case "Summer":
           compare.setFullYear(year, 9, 1);
           break;
+        default:
+          return false;
       }
-      console.log(current);
-      console.log(compare);
-      console.log(current < compare);
-      console.log("Check date for year " + year + " and term " + term);
       return current < compare;
     },
   },
@@ -179,7 +179,9 @@ h2 {
 .row > * {
   width: 33%;
   align-items: center;
+  justify-content: center;
   flex-flow: row wrap;
+  padding: 5px;
 }
 .row > * > .class-card {
   flex-basis: 50%;
@@ -194,7 +196,8 @@ h2 {
 .cs {
   --link-color: var(--red);
 }
-.upcoming, [upcoming] {
+.upcoming,
+[upcoming] > * {
   --link-color: var(--blue);
 }
 .descriptor {
@@ -205,8 +208,25 @@ h2 {
   right: 2.5vw;
   bottom: 2.5vh;
   transition: opacity 300ms;
+  z-index: 1;
+}
+@media (max-width:700px) {
+    .descriptor {
+        width: 100vw;
+        min-width: 100vw;
+        bottom:0;
+        right:initial;
+    }
+}
+@media (max-height: 500px) {
+    .descriptor {
+        height: 100vh;
+    }
 }
 .descriptor-enter, .descriptor-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+.courses > * > [upcoming] {
+  background-color: rgba(var(--blue), 0.125);
 }
 </style>

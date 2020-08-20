@@ -37,14 +37,14 @@ export default Vue.extend({
     padding: 5px;
 }
 .card:any-link {
-    color:rgb(var(--fore-color));
-    transition: color 300ms;
+    color:inherit;
     text-decoration: none;
+    transition: color 300ms;
 }
-.card:any-link:hover {
+.card:any-link:hover, .card:any-link:hover>h3 {
     color:rgb(var(--link-color));
 }
-[out-link].card:any-link>h3 {
+[target].card:any-link>h3 {
     text-decoration: underline;
 }
 </style>
