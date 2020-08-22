@@ -1,0 +1,78 @@
+[
+    {
+        "company": "McAfee LLC",
+        "role": "Software Engineering Intern",
+        "start": "06-2020",
+        "end": "08-2020",
+        "supervisors": [
+            {
+                "title": "Manager",
+                "name": "Ritu Jain"
+            }
+        ],
+        "description": "A spiel about working at McAfee"
+    },
+    {
+        "company": "MIT EECS Department",
+        "role": "Lab Assistant for 6.009",
+        "start": "09-2019",
+        "end": "05-2020",
+        "description": "A spiel about working as a lab assistant",
+        "supervisors": []
+    },
+    {
+        "company": "Broad Institute of MIT and Harvard",
+        "role": "Undergraduate Researcher",
+        "start": "09-2019",
+        "end": "01-2020",
+        "description": "A spiel about working at the Broad",
+        "supervisors": [
+            {
+                "title": "Principal Investigator",
+                "name": "Paul Blainey"
+            },
+            {
+                "title": "Mentor",
+                "name": "Cheri Ackerman"
+            }
+        ]
+    },
+    {
+        "company": "Sandia National Laboratories",
+        "role": "Undergraduate Intern R&D",
+        "start": "06-2019",
+        "end": "08-2018",
+        "description": "A spiel about working at Sandia",
+        "supervisors": [
+            {
+                "title": "Principal Investigator",
+                "name": "Raga Krishnakumar"
+            },
+            {
+                "title": "Mentor",
+                "name": "Matthew Hirakawa"
+            },
+            {
+                "title": "Mentor",
+                "name": "Nikki Tjahjono"
+            }
+        ]
+    },
+    {
+        "company": "Koch Institute for Integrative Cancer Research",
+        "role": "Undergraduate Researcher",
+        "start": "02-2019",
+        "end": "05-2019",
+        "description": "A spiel about working as an undergraduate researcher",
+        "supervisors": [
+            {
+                "title": "Principal Investigator",
+                "name": "Frank Gertler"
+            },
+            {
+                "title": "Mentor",
+                "name": "Elen Torres"
+            }
+        ]
+    }
+]
