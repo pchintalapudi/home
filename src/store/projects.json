@@ -3,8 +3,8 @@
         "name": "This Website",
         "description": "A spiel about this website",
         "tags": [
-            "Vue.js",
             "Typescript",
+            "Vue.js",
             "HTML",
             "CSS"
         ],
@@ -28,8 +28,8 @@
         "name": "Course Planner",
         "description": "A spiel about the course planner",
         "tags": [
-            "Vue.js",
             "Typescript",
+            "Vue.js",
             "HTML",
             "CSS"
         ],
@@ -40,8 +40,8 @@
         "name": "Molecule Drawer",
         "description": "A spiel about the molecule drawer",
         "tags": [
-            "Vue.js",
             "Typescript",
+            "Vue.js",
             "HTML",
             "CSS",
             "JavaFX",
@@ -54,8 +54,8 @@
         "name": "Rendering Engine",
         "description": "A spiel about the browser",
         "tags": [
-            "Java",
             "C++",
+            "Java",
             "V8",
             "DOM",
             "HTML",
@@ -73,17 +73,19 @@
             "CSS",
             "Multithreading"
         ],
-        "start":"08-2017",
-        "end":"04-2018"
+        "start": "08-2017",
+        "end": "04-2018"
     },
     {
-        "name":"JavaFX Graphing Calculator",
-        "description":"A spiel about the graphing calculator",
-        "tags":[
+        "name": "JavaFX Graphing Calculator",
+        "description": "A spiel about the graphing calculator",
+        "tags": [
             "Java",
             "JavaFX",
             "Multithreading",
             "Design Patterns"
-        ]
+        ],
+        "start": "10-2017",
+        "end": "04-2018"
     }
 ]

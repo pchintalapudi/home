@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import classes from './classes.json';
+import projects from "./projects.json";
+import work from "./work.json";
 
 class ClassData {
 
@@ -12,7 +14,9 @@ export default new Vuex.Store({
     state: {
         darkMode: localStorage.getItem('darkMode') === 'dark',
         classes,
-        classCache: {}
+        classCache: {},
+        projects,
+        work
     },
     mutations: {
         darkMode(state, darkMode: boolean) {
