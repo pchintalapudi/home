@@ -45,6 +45,7 @@ h2 {
 .projects {
     flex-flow: row wrap;
     justify-content: space-evenly;
+    padding: 30px;
 }
 .project {
     flex-basis:calc(100%/3);
