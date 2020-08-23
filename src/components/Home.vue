@@ -75,9 +75,9 @@ main {
   --level-7: 0.14;
   --level-8: 0.15;
   --level-9: 0.16;
-  --blue: 18, 96, 160;
+  --blue: 0, 100, 200;
   --green: 0, 144, 64;
-  --yellow: 196, 144, 0;
+  --yellow: 200, 175, 0;
   --red: 206, 32, 32;
   background-color: rgb(var(--back-color));
   color: rgb(var(--text-color));

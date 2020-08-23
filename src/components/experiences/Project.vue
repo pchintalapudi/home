@@ -2,9 +2,9 @@
   <article class="project">
     <h3>{{name}}</h3>
     <b>{{timeRange}}</b>
-    <p>{{description}}</p>
+    <p class="description" v-html="markedDesc"></p>
     <a :href="link" v-if="!!link">Live Demo</a>
-    <a :href="github" v-if="!!github">Github Project</a>
+    <a :href="github" v-if="!!github">GitHub Project</a>
     <ul class="tags">
       <li v-for="tag in tags" :key="`${name}-${tag}`">{{tag}}</li>
     </ul>
@@ -12,6 +12,7 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import marked from "marked";
 export default Vue.extend({
   props: {
     name: String,
@@ -48,6 +49,9 @@ export default Vue.extend({
           return "track-color";
       }
     },
+    markedDesc(): string {
+      return marked(this.description, { breaks: true, gfm: true });
+    },
   },
   methods: {
     toMonth(monthNumber: number) {
@@ -64,6 +68,7 @@ export default Vue.extend({
 }
 .tags {
   flex-flow: row wrap;
+  margin: 10px 0;
 }
 .tags > * {
   display: inline;
@@ -74,17 +79,27 @@ export default Vue.extend({
   display: inline;
   padding-right: 0.125em;
 }
-:any-link,
-:any-link:visited {
+.project :any-link,
+.project :any-link:visited {
   color: rgb(var(--blue));
   text-decoration: none;
   transition: color 300ms, opacity 300ms;
   align-self: start;
 }
-:any-link:hover {
-    opacity: 0.75;
+.project :any-link:hover {
+  opacity: 0.75;
 }
-:any-link:active {
-    opacity: 0.5;
+.project :any-link:active {
+  opacity: 0.5;
+}
+.description {
+    margin: 10px 0;
+    display: block;
+}
+.description >>> p {
+    display: initial;
+}
+.description :any-link {
+    display: inline;
 }
 </style>

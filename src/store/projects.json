@@ -2,7 +2,7 @@
     {
         "id": "website",
         "name": "This Website",
-        "description": "A spiel about this website",
+        "description": "This website has been a work in progress since the middle of August 2020. Vue.js allows for componentizing each part of the page, and autogenerating many of the page contents from hardcoded JSON files (like these descriptions!). In the future, I hope to expand on the search functionality of the front page and migrate the JSON files to another repository to have a cleaner separation between data and view.",
         "tags": [
             "Typescript",
             "Vue.js",
@@ -12,12 +12,12 @@
         "start": "08-2020",
         "end": null,
         "github": "https://github.com/pchintalapudi/home",
-        "link":"https://pchintalapudi.github.io/home"
+        "link": "https://pchintalapudi.github.io/home"
     },
     {
         "id": "vm",
         "name": "Virtual Machine",
-        "description": "A spiel about the virtual machine",
+        "description": "This project, written entirely in C++, has a main goal of producing a working virtual machine using no more than the C++ standard library and a few platform-specific APIs for virtual memory and memory-mapped files (Windows-only at the moment) that implements a garbage-collected language running on a compiled bytecode. The VM and bytecode are modeled loosely off the specifications of the JVM and CLR, minus multithreading-specific instructions. While the core parts of the virtual machine are complete, its friend projects to [create a standard library](https://github.com/pchintalapudi/vm-lib) for its custom bytecode and [write a compiler](https://github.com/pchintalapudi/bcode-compiler) for that bytecode are ongoing. Thus far, the project has taught me a lot about how the JVM and CLR and other virtual machines work under the hood, and I expect the projects to continue teaching me new things for a while to come.",
         "tags": [
             "C++",
             "Templates",
@@ -32,7 +32,7 @@
     {
         "id": "planner",
         "name": "Course Planner",
-        "description": "A spiel about the course planner",
+        "description": "My course planner, inspired and partially reverse-engineered from [CourseRoad](https://courseroad.mit.edu), was created because my schedule of classes put some strain on the more official site. In my version, I adopted a more asynchronous design, which allows the website to display content and react to user input even as resources are still loading. It also takes heavy advantage of the localStorage API to cache class descriptions and store the user's schedule. Also, I brought back a feature from an older version of CourseRoad, namely prerequisite and corequisite links. This was originally dropped as drawing the links requires breaking component boundaries and is at odds with how Vue is designed, but I was able to add hooks into resize listeners and my own modification APIs to simply redraw minimal amounts of the graph on changes to courses.",
         "tags": [
             "Typescript",
             "Vue.js",
@@ -42,12 +42,12 @@
         "start": "12-2019",
         "end": "01-2020",
         "github": "https://github.com/pchintalapudi/courses",
-        "link":"https://pchintalapudi.github.io/courses"
+        "link": "https://pchintalapudi.github.io/courses"
     },
     {
         "id": "drawer",
         "name": "Molecule Drawer",
-        "description": "A spiel about the molecule drawer",
+        "description": "This project in particular has been a long journey, from its original inception in JavaFX and Java to its current form in Vue.js and Typescript. Modeled after ChemDraw, the drawer uses SVG and a healthy amount of CSS to render beautiful pictures of molecules drawn in both line structures and an almost-3D mode (it fakes it using gradients and 2D shapes on the same plane). I was able to learn a decent amount of CSS transforms and geometry of mouse translation, as well as designing and redesigning many aspect of the program as it progressed through many UX and language iterations.",
         "tags": [
             "Typescript",
             "Vue.js",
@@ -59,7 +59,7 @@
         "start": "06-2018",
         "end": "07-2019",
         "github": "https://github.com/pchintalapudi/mdraw",
-        "link":"https://pchintalapudi.github.io/mdraw"
+        "link": "https://pchintalapudi.github.io/mdraw"
     },
     {
         "name": "Rendering Engine",
