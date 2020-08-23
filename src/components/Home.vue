@@ -1,6 +1,13 @@
 <template>
   <main :dark-mode="darkMode">
-    <title-vue></title-vue>
+    <nav>
+      <h1>Prem Chintalapudi</h1>
+      <span class="grow"></span>
+      <span>
+        <theme-switcher-vue class="dark-mode-switcher"></theme-switcher-vue>
+      </span>
+    </nav>
+    <summary-vue></summary-vue>
     <education-vue></education-vue>
     <work-vue></work-vue>
     <projects-vue></projects-vue>
@@ -8,12 +15,13 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
-import TitleVue from "./pages/Title.vue";
+import ThemeSwitcherVue from "./ThemeSwitcher.vue";
+import SummaryVue from "./pages/Summary.vue";
 import EducationVue from "./pages/Education.vue";
 import WorkVue from "./pages/Work.vue";
 import ProjectsVue from "./pages/Projects.vue";
 export default Vue.extend({
-  components: { TitleVue, ProjectsVue, EducationVue, WorkVue },
+  components: { ThemeSwitcherVue, SummaryVue, ProjectsVue, EducationVue, WorkVue },
   computed: {
     darkMode(): boolean {
       return this.$store.state.darkMode;
@@ -47,6 +55,12 @@ main {
 .grow {
   flex: 1;
 }
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    font-size: 2em;
+}
 main {
   --back-color: 255, 255, 255;
   --fore-color: 0, 0, 0;
@@ -71,7 +85,8 @@ main {
   overflow-y: auto;
   scroll-behavior: smooth;
 }
-input, button {
+input,
+button {
   background-color: rgb(var(--back-color));
   color: rgb(var(--text-color));
   transition: background-color 300ms, color 300ms;
@@ -86,15 +101,8 @@ main[dark-mode] {
   --yellow: 220, 220, 80;
   --red: 220, 60, 60;
 }
-main>* {
-    flex-shrink: 0;
-}
-h1, h2, h3, h4, h5, h6 {
-    color:rgb(var(--fore-color));
-    transition: color 300ms;
-}
-html {
-  font-family: "Merriweather", serif;
+main > * {
+  flex-shrink: 0;
 }
 h1,
 h2,
@@ -102,11 +110,16 @@ h3,
 h4,
 h5,
 h6 {
+  color: rgb(var(--fore-color));
+  transition: color 300ms;
   font-family: "Rubik", sans-serif;
 }
-@media (max-width:500px) {
-    html {
-        font-size: 0.8em;
-    }
+html {
+  font-family: "Merriweather", serif;
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 0.8em;
+  }
 }
 </style>

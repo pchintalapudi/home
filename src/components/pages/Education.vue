@@ -7,9 +7,9 @@
     <h3 id="undergrad">Massacusetts Institute of Technology</h3>
     <article class="classes">
       <section class="headers">
-        <h3 class="bio">Bioengineering</h3>
+        <h3 class="bio" id="bioengineering">Bioengineering</h3>
         <h3 class="both">Both</h3>
-        <h3 class="cs">Computer Science</h3>
+        <h3 class="cs" id="computers">Computer Science</h3>
       </section>
       <article class="courses">
         <section v-for="year in correctedClasses" :key="year.year" class="empty">
@@ -210,18 +210,18 @@ h2 {
   transition: opacity 300ms;
   z-index: 1;
 }
-@media (max-width:700px) {
-    .descriptor {
-        width: 100vw;
-        min-width: 100vw;
-        bottom:0;
-        right:initial;
-    }
+@media (max-width: 700px) {
+  .descriptor {
+    width: 100vw;
+    min-width: 100vw;
+    bottom: 0;
+    right: initial;
+  }
 }
 @media (max-height: 500px) {
-    .descriptor {
-        height: 100vh;
-    }
+  .descriptor {
+    height: 100vh;
+  }
 }
 .descriptor-enter, .descriptor-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

@@ -1,26 +1,21 @@
 <template>
-  <section class="title-page">
-    <nav>
-      <h1>Prem Chintalapudi</h1>
-      <span class="grow"></span>
-      <span>
-        <theme-switcher-vue class="dark-mode-switcher"></theme-switcher-vue>
-      </span>
-    </nav>
+  <section class="summary-page">
+    <h2>At a Glance</h2>
     <article class="summary">
       <div class="cards">
         <icon-vue tooltip="Education" :link-color="'var(--blue)'" href="#education">
           <i class="graduation-cap"></i>
         </icon-vue>
         <card-vue
-          :card-title="'Undergraduate'"
+          :card-title="'Bioengineering S.B.'"
           :content="'Massachusetts Institute of Technology'"
-          href="#undergrad"
+          href="#bioengineering"
           :linkColor="'var(--blue)'"
         ></card-vue>
         <card-vue
-          :card-title="'High School'"
-          :content="'Dougherty Valley High School'"
+          :card-title="'Computer Science and Engineering S.B.'"
+          :content="'Massachusetts Institute of Technology'"
+          href="#computers"
           :linkColor="'var(--blue)'"
         ></card-vue>
       </div>
@@ -29,27 +24,11 @@
           <i class="laptop"></i>
         </icon-vue>
         <card-vue
-          :card-title="'Software Engineering Intern'"
-          :content="'McAfee LLC'"
-          href="#"
-          :linkColor="'var(--green)'"
-        ></card-vue>
-        <card-vue
-          :card-title="'Undergraduate Researcher'"
-          :content="'Broad Institute of MIT and Harvard'"
-          href="#"
-          :linkColor="'var(--green)'"
-        ></card-vue>
-        <card-vue
-          :card-title="'Undergraduate Summer Intern R&D'"
-          :content="'Sandia National Laboratories'"
-          href="#"
-          :linkColor="'var(--green)'"
-        ></card-vue>
-        <card-vue
-          :card-title="'Undergraduate Researcher'"
-          :content="'Koch Institute for Integrative Cancer Research'"
-          href="#"
+          v-for="exp in work"
+          :key="`summary-${exp.company}-${exp.role}`"
+          :card-title="exp.role"
+          :content="exp.company"
+          :href="`#${exp.id}`"
           :linkColor="'var(--green)'"
         ></card-vue>
       </div>
@@ -58,37 +37,15 @@
           <i class="clock"></i>
         </icon-vue>
         <card-vue
-          :card-title="'This website'"
-          :content="'Vue.js/Typescript'"
-          href="#website"
-          :linkColor="'var(--yellow)'"
-        ></card-vue>
-        <card-vue
-          :card-title="'Mini Virtual Machine'"
-          :content="'C++'"
-          href="#vm"
-          :linkColor="'var(--yellow)'"
-        ></card-vue>
-        <card-vue
-          :card-title="'Course Planning Website'"
-          :content="'Vue.js/Typescript'"
-          href="#planner"
-          :linkColor="'var(--yellow)'"
-        ></card-vue>
-        <card-vue
-          :card-title="'Molecule Drawer'"
-          :content="'Vue.js/Typescript'"
-          href="#drawer"
-          :linkColor="'var(--yellow)'"
-        ></card-vue>
-        <card-vue
-          :card-title="'VEX Robotics Simulator'"
-          :content="'Java'"
-          href="#simulator"
+          v-for="project in projects"
+          :key="`summary-${project.name}`"
+          :card-title="project.name"
+          :content="project.tags[0]"
+          :href="`#${project.id}`"
           :linkColor="'var(--yellow)'"
         ></card-vue>
       </div>
-      <div class="cards">
+      <!-- <div class="cards">
         <icon-vue tooltip="Skills" :linkColor="'var(--red)'" href="#skills">
           <i class="hammer"></i>
         </icon-vue>
@@ -105,17 +62,24 @@
         <card-vue :card-title="'CRISPRa/i'" href="#" :linkColor="'var(--green)'"></card-vue>
         <card-vue :card-title="'Antibody Staining'" href="#" :linkColor="'var(--green)'"></card-vue>
         <card-vue :card-title="'Western Blot'" href="#" :linkColor="'var(--green)'"></card-vue>
-      </div>
+      </div> -->
     </article>
   </section>
 </template>
 <script lang="ts">
 import Vue from "vue";
-import ThemeSwitcherVue from "../ThemeSwitcher.vue";
 import IconVue from "../utils/Icon.vue";
 import CardVue from "../utils/Card.vue";
 export default Vue.extend({
-  components: { ThemeSwitcherVue, IconVue, CardVue },
+  components: { IconVue, CardVue },
+  computed: {
+    work(): any[] {
+      return this.$store.state.work;
+    },
+    projects(): any[] {
+        return this.$store.state.projects;
+    }
+  },
 });
 </script>
 <style>
@@ -127,10 +91,8 @@ nav {
 .dark-mode-switcher {
   transform: scale(0.5, 0.5);
 }
-h1 {
-  font-size: 2.5em;
-}
-.title-page {
+
+.summary-page {
   min-height: 100vh;
 }
 .laptop::before {
@@ -233,7 +195,10 @@ h1 {
   flex: 1;
   align-items: center;
 }
-.summary>.cards .icon:not([href="#skills"])~.card {
-    min-width: 200px;
+.summary > .cards .icon:not([href="#skills"]) ~ .card {
+  min-width: 200px;
+}
+.summary-page>h2 {
+    padding-left: 40px;
 }
 </style>
