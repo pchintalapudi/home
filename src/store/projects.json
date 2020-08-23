@@ -1,6 +1,6 @@
 [
     {
-        "id":"website",
+        "id": "website",
         "name": "This Website",
         "description": "A spiel about this website",
         "tags": [
@@ -10,10 +10,12 @@
             "CSS"
         ],
         "start": "08-2020",
-        "end": null
+        "end": null,
+        "github": "https://github.com/pchintalapudi/home",
+        "link":"https://pchintalapudi.github.io/home"
     },
     {
-        "id":"vm",
+        "id": "vm",
         "name": "Virtual Machine",
         "description": "A spiel about the virtual machine",
         "tags": [
@@ -24,10 +26,11 @@
             "Garbage Collection"
         ],
         "start": "06-2020",
-        "end": null
+        "end": null,
+        "github": "https://github.com/pchintalapudi/virtual-machine"
     },
     {
-        "id":"planner",
+        "id": "planner",
         "name": "Course Planner",
         "description": "A spiel about the course planner",
         "tags": [
@@ -37,10 +40,12 @@
             "CSS"
         ],
         "start": "12-2019",
-        "end": "01-2020"
+        "end": "01-2020",
+        "github": "https://github.com/pchintalapudi/courses",
+        "link":"https://pchintalapudi.github.io/courses"
     },
     {
-        "id":"drawer",
+        "id": "drawer",
         "name": "Molecule Drawer",
         "description": "A spiel about the molecule drawer",
         "tags": [
@@ -52,7 +57,9 @@
             "Java"
         ],
         "start": "06-2018",
-        "end": "07-2019"
+        "end": "07-2019",
+        "github": "https://github.com/pchintalapudi/mdraw",
+        "link":"https://pchintalapudi.github.io/mdraw"
     },
     {
         "name": "Rendering Engine",
@@ -66,10 +73,11 @@
             "Javascript"
         ],
         "start": "08-2019",
-        "end": "01-2020"
+        "end": "01-2020",
+        "github": "https://github.com/pchintalapudi/v8-render-engine"
     },
     {
-        "id":"simulator",
+        "id": "simulator",
         "name": "VEX In The Zone Simulator",
         "description": "A spiel about the simulator",
         "tags": [
@@ -79,7 +87,8 @@
             "Multithreading"
         ],
         "start": "08-2017",
-        "end": "04-2018"
+        "end": "04-2018",
+        "github": "https://github.com/pchintalapudi/itz"
     },
     {
         "name": "JavaFX Graphing Calculator",

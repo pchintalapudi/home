@@ -60,18 +60,31 @@ export default Vue.extend({
 </script>
 <style scoped>
 .project {
-    padding: 10px;
+  padding: 10px;
 }
 .tags {
-    flex-flow: row wrap;
+  flex-flow: row wrap;
 }
-.tags>* {
-    display: inline;
-    font-style: italic;
+.tags > * {
+  display: inline;
+  font-style: italic;
 }
-.tags>:not(:last-child)::after {
-    content:", ";
-    display: inline;
-    padding-right: 0.125em;
+.tags > :not(:last-child)::after {
+  content: ", ";
+  display: inline;
+  padding-right: 0.125em;
+}
+:any-link,
+:any-link:visited {
+  color: rgb(var(--blue));
+  text-decoration: none;
+  transition: color 300ms, opacity 300ms;
+  align-self: start;
+}
+:any-link:hover {
+    opacity: 0.75;
+}
+:any-link:active {
+    opacity: 0.5;
 }
 </style>
