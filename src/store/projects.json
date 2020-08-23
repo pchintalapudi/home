@@ -1,5 +1,6 @@
 [
     {
+        "id":"website",
         "name": "This Website",
         "description": "A spiel about this website",
         "tags": [
@@ -12,6 +13,7 @@
         "end": null
     },
     {
+        "id":"vm",
         "name": "Virtual Machine",
         "description": "A spiel about the virtual machine",
         "tags": [
@@ -25,6 +27,7 @@
         "end": null
     },
     {
+        "id":"planner",
         "name": "Course Planner",
         "description": "A spiel about the course planner",
         "tags": [
@@ -37,6 +40,7 @@
         "end": "01-2020"
     },
     {
+        "id":"drawer",
         "name": "Molecule Drawer",
         "description": "A spiel about the molecule drawer",
         "tags": [
@@ -65,6 +69,7 @@
         "end": "01-2020"
     },
     {
+        "id":"simulator",
         "name": "VEX In The Zone Simulator",
         "description": "A spiel about the simulator",
         "tags": [

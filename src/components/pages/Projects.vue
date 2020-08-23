@@ -5,9 +5,11 @@
     </icon-vue>
     <h2>Personal Projects</h2>
     <section class="projects">
-      <div class="overflowing">
-        <project-vue v-for="project in projects" :key="project.name" v-bind="project"></project-vue>
-      </div>
+      <project-vue
+        v-for="project in projects"
+        :key="project.name"
+        v-bind="project"
+      ></project-vue>
     </section>
   </article>
 </template>
@@ -22,6 +24,7 @@ interface Project {
   start: string;
   end: string | null;
   link?: string;
+  github?: string;
 }
 export default Vue.extend({
   components: { IconVue, ProjectVue },
@@ -39,12 +42,12 @@ h2 {
 #projects {
   align-items: center;
 }
-.overflowing {
-  flex-flow: row nowrap;
-}
 .projects {
-  overflow: auto;
-  max-width: calc(100vw - 40px);
-  padding: 10px;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.project {
+    flex-basis:calc(100%/3);
+    min-width: 300px;
 }
 </style>

@@ -1,11 +1,13 @@
 <template>
-  <article
-    class="project"
-    :style="`--link-color:rgb(var(--${linkColor}));`"
-    @click="$emit('load-project', $props)"
-  >
+  <article class="project">
     <h3>{{name}}</h3>
     <b>{{timeRange}}</b>
+    <p>{{description}}</p>
+    <a :href="link" v-if="!!link">Live Demo</a>
+    <a :href="github" v-if="!!github">Github Project</a>
+    <ul class="tags">
+      <li v-for="tag in tags" :key="`${name}-${tag}`">{{tag}}</li>
+    </ul>
   </article>
 </template>
 <script lang="ts">
@@ -18,6 +20,7 @@ export default Vue.extend({
     start: String,
     end: String,
     link: String,
+    github: String,
   },
   computed: {
     timeRange(): string {
@@ -57,19 +60,18 @@ export default Vue.extend({
 </script>
 <style scoped>
 .project {
-  padding: 10px;
-  margin: 0 10px;
-  transition: background-color 300ms;
-  background-color: rgba(var(--fore-color), var(--level-1));
-  border-radius: 10px;
-  text-align: center;
-  min-width: 200px;
-  cursor: pointer;
+    padding: 10px;
 }
-.project:hover {
-  background-color: rgba(var(--fore-color), var(--level-2));
+.tags {
+    flex-flow: row wrap;
 }
-.project:hover > h3 {
-  color: var(--link-color);
+.tags>* {
+    display: inline;
+    font-style: italic;
+}
+.tags>:not(:last-child)::after {
+    content:", ";
+    display: inline;
+    padding-right: 0.125em;
 }
 </style>

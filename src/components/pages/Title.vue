@@ -72,7 +72,7 @@
         <card-vue
           :card-title="'Course Planning Website'"
           :content="'Vue.js/Typescript'"
-          href="#planning"
+          href="#planner"
           :linkColor="'var(--yellow)'"
         ></card-vue>
         <card-vue
