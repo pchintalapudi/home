@@ -87,7 +87,6 @@ export default Vue.extend({
       return this.$store.state.classes;
     },
     correctedClasses(): any[] {
-      console.log(this.classes);
       return this.classes.map((year_obj) => {
         let terms = [];
         let year = year_obj.Year;

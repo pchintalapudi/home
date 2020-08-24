@@ -63,9 +63,6 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
-.project {
-  padding: 10px;
-}
 .tags {
   flex-flow: row wrap;
   margin: 10px 0;

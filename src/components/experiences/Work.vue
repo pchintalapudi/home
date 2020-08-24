@@ -1,13 +1,14 @@
 <template>
-  <article :id="id || false">
+  <article :id="id || false" class="work">
     <h3>{{role}}</h3>
     <h4>{{company}}</h4>
     <i>{{timeRange}}</i>
-    <p>{{description}}</p>
+    <p class="description" v-html="markedDesc"></p>
   </article>
 </template>
 <script lang="ts">
 import Vue from "vue";
+import marked from "marked";
 export default Vue.extend({
   props: {
     id: String,
@@ -28,6 +29,9 @@ export default Vue.extend({
               3
             )}`
       }`;
+    },
+    markedDesc(): string {
+      return marked(this.description, { gfm: true, breaks: true });
     },
   },
   methods: {
@@ -50,5 +54,28 @@ export default Vue.extend({
   content: ", ";
   display: inline;
   padding-right: 0.125em;
+}
+.work :any-link,
+.work :any-link:visited {
+  color: rgb(var(--blue));
+  text-decoration: none;
+  transition: color 300ms, opacity 300ms;
+  align-self: start;
+}
+.work :any-link:hover {
+  opacity: 0.75;
+}
+.work :any-link:active {
+  opacity: 0.5;
+}
+.description {
+  margin: 10px 0;
+  display: block;
+}
+.description >>> p {
+  display: initial;
+}
+.description :any-link {
+  display: inline;
 }
 </style>

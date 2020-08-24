@@ -1,6 +1,6 @@
 [
     {
-        "id":"mcafee",
+        "id": "mcafee",
         "company": "McAfee LLC",
         "role": "Software Engineering Intern",
         "start": "06-2020",
@@ -11,24 +11,24 @@
                 "name": "Ritu Jain"
             }
         ],
-        "description": "A spiel about working at McAfee"
+        "description": "At McAfee, I worked with a team on implementing security controls for [Connected Apps](https://www.youtube.com/watch?v=uazaXeCpEA4), 3rd party apps that can be installed into platforms such as G Suite and Office 365. Within the team, I worked on multiple projects, including securing endpoints with Spring Security, creating an automation test suite to verify page loads and estimate page load times, and adding new functionality to the application by creating new endpoints to support data aggregation into a chart view. Besides the actual code though, I also learned many other aspects of robust production-level programming, such as Jira issue tracking, the SVN version control system, automation testing using Cypress, the Maven build system, and Jenkins continuous integration."
     },
     {
-        "id":"la",
+        "id": "la",
         "company": "MIT EECS Department",
         "role": "Lab Assistant for 6.009",
         "start": "09-2019",
         "end": "05-2020",
-        "description": "A spiel about working as a lab assistant",
+        "description": "As a lab assistant for MIT's 6.009 Fundamentals of Programming course, I had the responsiblities of both helping students understand and complete the problems on their assignments as well as assessing students on their solutions to the assignments in the class. In addition to learning new strategies of explaining ideas and code to other people, this job helped me develop skills in analyzing other people's code to quickly locate bugs and performance hotspots, and exposed me to many different styles of code and approaches to solving problems.",
         "supervisors": []
     },
     {
-        "id":"broad",
+        "id": "broad",
         "company": "Broad Institute of MIT and Harvard",
         "role": "Undergraduate Researcher",
         "start": "09-2019",
         "end": "01-2020",
-        "description": "A spiel about working at the Broad",
+        "description": "At the Broad, my project involved working with VK2 cells, a human vaginal epithelial cell line, and characterizing their growth patterns in preparation for co-culturing experiments with different types of bacteria. The cells were grown in PDMS microwells using supplemented keratinocyte cell media, and were stained with DAPI and phalloidin to both assess confluence and to validate staining on PDMS microwells.",
         "supervisors": [
             {
                 "title": "Principal Investigator",
@@ -41,12 +41,12 @@
         ]
     },
     {
-        "id":"sandia",
+        "id": "sandia",
         "company": "Sandia National Laboratories",
         "role": "Undergraduate Intern R&D",
         "start": "06-2019",
         "end": "08-2018",
-        "description": "A spiel about working at Sandia",
+        "description": "My project at Sandia National Labs was focused on mesenchymal stem cells, and characterizing their potential antibacterial properties. In support of this goal, I learned to make and pour agar plates and LB broth, culture bacterial and mammalian cells in a variety of environments, transfect and clone plasmids into mammalian and bacterial cells, and harvest DNA from bacteria for sequencing. From an assaying perspective, I learned the basics of flow cytometry and colony counting to assess antibacterial activity.",
         "supervisors": [
             {
                 "title": "Principal Investigator",
@@ -63,12 +63,12 @@
         ]
     },
     {
-        "id":"koch",
+        "id": "koch",
         "company": "Koch Institute for Integrative Cancer Research",
         "role": "Undergraduate Researcher",
         "start": "02-2019",
         "end": "05-2019",
-        "description": "A spiel about working as an undergraduate researcher",
+        "description": "As an undergraduate working in the Koch Institute, I worked on assaying cells for proteins that complexed with MENA, an actin regulator. In the process, I picked up several fundamental lab techniques, including aseptic handling, cell culture, Western blots, and co-immunoprecipitation. I also worked on a project to assess hypoxia in frozen mouse breast tumors, which allowed me to develop skills in tumor sectioning and slide staining.",
         "supervisors": [
             {
                 "title": "Principal Investigator",

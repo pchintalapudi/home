@@ -5,11 +5,7 @@
     </icon-vue>
     <h2>Personal Projects</h2>
     <section class="projects">
-      <project-vue
-        v-for="project in projects"
-        :key="project.name"
-        v-bind="project"
-      ></project-vue>
+      <project-vue v-for="project in projects" :key="project.name" v-bind="project"></project-vue>
     </section>
   </article>
 </template>
@@ -36,19 +32,23 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
+.icon {
+    align-self: center;
+}
 h2 {
   padding: 10px;
-}
-#projects {
-  align-items: center;
+  text-align: center;
 }
 .projects {
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    padding: 30px;
+  display: grid;
+  column-gap: 15px;
+  row-gap: 15px;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  padding: 30px;
 }
-.project {
-    flex-basis:calc(100%/3);
-    min-width: 300px;
+@media (max-width: 900px) {
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 </style>

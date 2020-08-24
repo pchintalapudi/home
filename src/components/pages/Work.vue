@@ -3,7 +3,7 @@
     <icon-vue :icon-scale="3">
       <i class="laptop"></i>
     </icon-vue>
-    <h2>Work Experience</h2>
+    <h2 class="section-title">Work Experience</h2>
     <section class="experiences">
       <work-vue v-for="w in work" :key="w.name" v-bind="w"></work-vue>
     </section>
@@ -31,15 +31,23 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
-#work {
-  align-items: center;
+.icon {
+    align-self: center;
+}
+h2 {
+    padding: 10px;
+    text-align: center;
 }
 .experiences {
-  flex-flow: row wrap;
-}
-.experiences > * {
-  flex-basis: calc(100% / 3);
-  min-width: 250px;
+  display: grid;
   padding: 30px;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  column-gap: 15px;
+  row-gap: 15px;
+}
+@media (max-width: 900px) {
+  .experiences {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 </style>
