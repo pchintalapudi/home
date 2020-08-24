@@ -62,8 +62,9 @@
         "link": "https://pchintalapudi.github.io/mdraw"
     },
     {
+        "id":"browser",
         "name": "Rendering Engine",
-        "description": "A spiel about the browser",
+        "description": "For a long time, I had a pet project to build a rendering engine (like Blink or Gecko). My main takeaway from this experience is that this is HARD. There's a reason why Edge and Opera have moved from their own implementations to Blink. However, even though I wasn't able to make too much headway on the project, I did get a good look at two things: V8's native API, and the specifications underlying the DOM models. The experience with DOM model specifications proved to be very invaluable as I progressed into writing HTML/CSS/Javascript and scraping data from websites, and I was able to take what I had seen of the V8 API into account while building my own virtual machine.",
         "tags": [
             "C++",
             "Java",
@@ -79,7 +80,7 @@
     {
         "id": "simulator",
         "name": "VEX In The Zone Simulator",
-        "description": "A spiel about the simulator",
+        "description": "This was my first production-quality project, where I built a simulator for the VEX 2017-2018 challenge [In The Zone](https://www.youtube.com/watch?v=1Yo_mlR1VJU). This project taught me a lot about the non-code parts of programs, like documentation and configuration files, as well as being my first real foray into optimizing the user experience. This project was where I first learned that multithreading could be used to speed up a program, my first time using a server in Java (no more than a bare ServerSocket-Socket pair), and a place where I figured out what things could go wrong in a multithreaded program and how to fix them.",
         "tags": [
             "Java",
             "JavaFX",
@@ -91,8 +92,9 @@
         "github": "https://github.com/pchintalapudi/itz"
     },
     {
+        "id":"calc",
         "name": "JavaFX Graphing Calculator",
-        "description": "A spiel about the graphing calculator",
+        "description": "This project was inspired by a challenge in AP Calculus BC to create a program that could take derivatives and output their graphs. I expanded beyond the parameters of the problem to also implement my own shunting-yard based expression parser, as well as graphing non-polynomial functions and integrals as well as derivatives. Although this project is not on GitHub, it is mentioned here because this was the project where I learned about what factors actually affected performance: caching, branch prediction and speculative execution, and most importantly algorithmic optimizations as opposed to peephole microoptimizations. In fact, one of my most memorable experiences on this project was converting the function evaluator from running on 4 threads to running on a single thread and observing a 5X speedup, simply from the effects of cache thrashing and heavily improved branch prediction. Eventually I converted it back to a multithreaded evaluator, but this time I took the aforementioned factors into account and achieved a modest speedup over the single-threaded evaluator.",
         "tags": [
             "Java",
             "JavaFX",
