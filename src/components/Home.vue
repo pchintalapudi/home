@@ -7,6 +7,7 @@
         <theme-switcher-vue class="dark-mode-switcher"></theme-switcher-vue>
       </span>
     </nav>
+    <search-vue></search-vue>
     <summary-vue></summary-vue>
     <education-vue></education-vue>
     <work-vue></work-vue>
@@ -16,12 +17,20 @@
 <script lang="ts">
 import Vue from "vue";
 import ThemeSwitcherVue from "./ThemeSwitcher.vue";
+import SearchVue from "./pages/Search.vue";
 import SummaryVue from "./pages/Summary.vue";
 import EducationVue from "./pages/Education.vue";
 import WorkVue from "./pages/Work.vue";
 import ProjectsVue from "./pages/Projects.vue";
 export default Vue.extend({
-  components: { ThemeSwitcherVue, SummaryVue, ProjectsVue, EducationVue, WorkVue },
+  components: {
+    ThemeSwitcherVue,
+    SummaryVue,
+    ProjectsVue,
+    EducationVue,
+    WorkVue,
+    SearchVue
+  },
   computed: {
     darkMode(): boolean {
       return this.$store.state.darkMode;
@@ -56,10 +65,10 @@ main {
   flex: 1;
 }
 h1 {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 h2 {
-    font-size: 2em;
+  font-size: 2em;
 }
 main {
   --back-color: 255, 255, 255;
@@ -88,8 +97,9 @@ main {
 input,
 button {
   background-color: rgb(var(--back-color));
-  color: rgb(var(--text-color));
+  color: rgb(var(--fore-color));
   transition: background-color 300ms, color 300ms;
+  border: none;
 }
 main[dark-mode] {
   --back-color: 18, 18, 18;
@@ -114,8 +124,9 @@ h6 {
   transition: color 300ms;
   font-family: "Rubik", sans-serif;
 }
-html {
+html, input, button {
   font-family: "Merriweather", serif;
+  font-size: 1em;
 }
 @media (max-width: 500px) {
   html {
