@@ -1,6 +1,7 @@
 <template>
   <article
     :class="`class-card ${loading ? 'loading' : ''}`"
+    :id="id"
     @click="$emit('describe-class', {id, term, year, title:classTitle, description:classDescription})"
   >
     <h4>{{classTitle}}</h4>

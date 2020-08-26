@@ -14,14 +14,14 @@
       <article class="courses">
         <section v-for="year in correctedClasses" :key="year.year" class="empty">
           <section
-            v-for="{term, classes} in year.terms"
+            v-for="{term, courses} in year.terms"
             :key="`${year.year}-${term}`"
             class="row"
             :upcoming="upcoming(year.year, term)"
           >
             <section class="bio">
               <class-card-vue
-                v-for="cls in classes.bio"
+                v-for="cls in courses.bio"
                 :key="cls.id"
                 :year="year.year"
                 :term="term"
@@ -31,7 +31,7 @@
             </section>
             <section class="both">
               <class-card-vue
-                v-for="cls in classes.both"
+                v-for="cls in courses.both"
                 :key="cls.id"
                 :year="year.year"
                 :term="term"
@@ -41,7 +41,7 @@
             </section>
             <section class="cs">
               <class-card-vue
-                v-for="cls in classes.cs"
+                v-for="cls in courses.cs"
                 :key="cls.id"
                 :year="year.year"
                 :term="term"
@@ -88,14 +88,13 @@ export default Vue.extend({
     },
     correctedClasses(): any[] {
       return this.classes.map((year_obj) => {
-        let terms = [];
-        let year = year_obj.Year;
-        for (const term in year_obj) {
-          if (term != "Year") {
-            terms.push({ term, classes: this.typeSplit(year_obj[term]) });
-          }
-        }
-        return { year, terms };
+        return {
+          year:year_obj.year,
+          terms: year_obj.semesters.map((sem: any) => ({
+            term: sem.name,
+            courses: this.typeSplit(sem.classes),
+          })),
+        };
       });
     },
   },
@@ -110,7 +109,7 @@ export default Vue.extend({
           case "Both":
             out.both.push(cls);
             break;
-          case "Computers":
+          case "Computer Science":
             out.cs.push(cls);
             break;
         }

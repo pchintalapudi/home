@@ -5,9 +5,6 @@
     <p class="description" v-html="markedDesc"></p>
     <a :href="link" v-if="!!link">Live Demo</a>
     <a :href="github" v-if="!!github">GitHub Project</a>
-    <ul class="tags">
-      <li v-for="tag in tags" :key="`${name}-${tag}`">{{tag}}</li>
-    </ul>
   </article>
 </template>
 <script lang="ts">
@@ -63,19 +60,6 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
-.tags {
-  flex-flow: row wrap;
-  margin: 10px 0;
-}
-.tags > * {
-  display: inline;
-  font-style: italic;
-}
-.tags > :not(:last-child)::after {
-  content: ", ";
-  display: inline;
-  padding-right: 0.125em;
-}
 .project :any-link,
 .project :any-link:visited {
   color: rgb(var(--blue));

@@ -4,8 +4,8 @@
       class="type"
       :selecting="viewingOptions"
       :style="`--link-color:var(${linkColor})`"
-      @click="selectedOption === -1 ? viewingOptions=true : deselect()"
-    >{{selectedOption === -1 ? 'Any ' + filterType : options[selectedOption]}}</button>
+      @click="selectedOption === -1 ? viewingOptions=!viewingOptions : deselect()"
+    >{{selectedOption === -1 ? (options.length > 2 ? 'Any ' : 'Either ') + filterType : options[selectedOption]}}</button>
     <button
       class="dropdown"
       @click="viewingOptions=!viewingOptions"
@@ -79,7 +79,7 @@ button:active {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-.type[selecting] {
+.type[selecting], .type[selecting]+.dropdown {
   background-color: rgba(var(--fore-color), var(--level-1));
 }
 .dropdown {
@@ -100,5 +100,8 @@ button:active {
 }
 .dropdown[viewing]::after {
   transform: translate(-4.5px, 8px) rotate(225deg);
+}
+.type {
+    width: 175px;
 }
 </style>

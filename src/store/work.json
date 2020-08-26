@@ -5,6 +5,23 @@
         "role": "Software Engineering Intern",
         "start": "06-2020",
         "end": "08-2020",
+        "tags": [
+            "java",
+            "javascript",
+            "computer",
+            "programming",
+            "code",
+            "spring",
+            "boot",
+            "sql",
+            "mysql",
+            "backend",
+            "server",
+            "qa",
+            "cypress",
+            "automation",
+            "test"
+        ],
         "supervisors": [
             {
                 "title": "Manager",
@@ -20,6 +37,15 @@
         "start": "09-2019",
         "end": "05-2020",
         "description": "As a lab assistant for MIT's 6.009 Fundamentals of Programming course, I had the responsiblities of both helping students understand and complete the problems on their assignments as well as assessing students on their solutions to the assignments in the class. In addition to learning new strategies of explaining ideas and code to other people, this job helped me develop skills in analyzing other people's code to quickly locate bugs and performance hotspots, and exposed me to many different styles of code and approaches to solving problems.",
+        "tags": [
+            "python",
+            "computer",
+            "programming",
+            "teach",
+            "bug",
+            "review",
+            "code"
+        ],
         "supervisors": []
     },
     {
@@ -38,7 +64,8 @@
                 "title": "Mentor",
                 "name": "Cheri Ackerman"
             }
-        ]
+        ],
+        "tags": []
     },
     {
         "id": "sandia",
@@ -60,7 +87,8 @@
                 "title": "Mentor",
                 "name": "Nikki Tjahjono"
             }
-        ]
+        ],
+        "tags": []
     },
     {
         "id": "koch",
@@ -78,6 +106,7 @@
                 "title": "Mentor",
                 "name": "Elen Torres"
             }
-        ]
+        ],
+        "tags": []
     }
 ]

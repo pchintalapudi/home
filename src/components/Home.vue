@@ -96,10 +96,10 @@ main {
 }
 input,
 button {
-  background-color: rgb(var(--back-color));
   color: rgb(var(--fore-color));
   transition: background-color 300ms, color 300ms;
   border: none;
+  text-align: left;
 }
 main[dark-mode] {
   --back-color: 18, 18, 18;

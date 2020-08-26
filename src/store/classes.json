@@ -1,148 +1,356 @@
 [
     {
-        "Year": 2018,
-        "Prior Credit": [
+        "year": 2018,
+        "semesters": [
             {
-                "id": "5.111",
-                "classification": "Bioengineering"
+                "name": "Prior Credit",
+                "classes": [
+                    {
+                        "id": "5.111",
+                        "tags": [
+                            "chemistry"
+                        ],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "5.12",
+                        "tags": [
+                            "chemistry"
+                        ],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "7.012",
+                        "tags": [
+                            "biology"
+                        ],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "8.01",
+                        "tags": [
+                            "physics"
+                        ],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "18.01",
+                        "tags": [
+                            "math",
+                            "calculus"
+                        ],
+                        "classification": "Both"
+                    },
+                    {
+                        "id": "18.02",
+                        "tags": [
+                            "math",
+                            "calculus",
+                            "multivariable"
+                        ],
+                        "classification": "Both"
+                    }
+                ]
             },
             {
-                "id": "5.12",
-                "classification": "Bioengineering"
-            },
-            {
-                "id": "7.012",
-                "classification": "Bioengineering"
-            },
-            {
-                "id": "8.01",
-                "classification": "Bioengineering"
-            },
-            {
-                "id": "18.01",
-                "classification": "Both"
-            },
-            {
-                "id": "18.02",
-                "classification": "Both"
-            }
-        ],
-        "Fall": [
-            {
-                "id": "3.986",
-                "classification": "Bioengineering"
-            },
-            {
-                "id": "6.0001",
-                "classification": "Computers"
-            },
-            {
-                "id": "7.03",
-                "classification": "Bioengineering"
-            },
-            {
-                "id": "8.02",
-                "classification": "Bioengineering"
-            },
-            {
-                "id": "18.03",
-                "classification": "Bioengineering"
-            }
-        ]
-    },
-    {
-        "Year": 2019,
-        "IAP": [
-            {
-                "id": "6.057",
-                "classification": "Both"
-            },
-            {
-                "id": "6.179",
-                "classification": "Computers"
-            }
-        ],
-        "Spring": [
-            {
-                "id": "6.0002",
-                "classification": "Both"
-            },
-            {
-                "id": "6.009",
-                "classification": "Computers"
-            },
-            {
-                "id": "7.05",
-                "classification": "Bioengineering"
-            },
-            {
-                "id": "9.00",
-                "classification": "Bioengineering"
-            },
-            {
-                "id": "18.06",
-                "classification": "Both"
-            }
-        ],
-        "Fall": [
-            {
-                "id": "5.13",
-                "classification": "Bioengineering"
-            },
-            {
-                "id": "5.310",
-                "classification": "Bioengineering"
-            },
-            {
-                "id": "6.004",
-                "classification": "Computers"
-            },
-            {
-                "id": "6.006",
-                "classification": "Computers"
-            },
-            {
-                "id": "20.110",
-                "classification": "Bioengineering"
+                "name": "Fall",
+                "classes": [
+                    {
+                        "id": "3.986",
+                        "tags": [],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "6.0001",
+                        "tags": [
+                            "python",
+                            "computer",
+                            "code",
+                            "programming"
+                        ],
+                        "classification": "Computer Science"
+                    },
+                    {
+                        "id": "7.03",
+                        "tags": [
+                            "biology",
+                            "genetics"
+                        ],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "8.02",
+                        "tags": [
+                            "physics",
+                            "electricity",
+                            "magnetism"
+                        ],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "18.03",
+                        "tags": [
+                            "differential",
+                            "math",
+                            "calculus"
+                        ],
+                        "classification": "Bioengineering"
+                    }
+                ]
             }
         ]
     },
     {
-        "Year": 2020,
-        "Spring": [
+        "year": 2019,
+        "semesters": [
             {
-                "id": "6.031",
-                "classification": "Computers"
+                "name": "IAP",
+                "classes": [
+                    {
+                        "id": "6.057",
+                        "tags": [
+                            "matlab",
+                            "computer",
+                            "code",
+                            "programming"
+                        ],
+                        "classification": "Both"
+                    },
+                    {
+                        "id": "6.179",
+                        "tags": [
+                            "C",
+                            "computer",
+                            "code",
+                            "programming"
+                        ],
+                        "classification": "Computer Science"
+                    }
+                ]
             },
             {
-                "id": "6.036",
-                "classification": "Both"
+                "name": "Spring",
+                "classes": [
+                    {
+                        "id": "6.0002",
+                        "tags": [
+                            "python",
+                            "computer",
+                            "code",
+                            "programming"
+                        ],
+                        "classification": "Both"
+                    },
+                    {
+                        "id": "6.009",
+                        "tags": [
+                            "python",
+                            "computer",
+                            "code",
+                            "programming",
+                            "software",
+                            "engineering"
+                        ],
+                        "classification": "Computer Science"
+                    },
+                    {
+                        "id": "7.05",
+                        "tags": [
+                            "biochemistry",
+                            "biology",
+                            "chemistry"
+                        ],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "9.00",
+                        "tags": [
+                            "psychology",
+                            "biology"
+                        ],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "18.06",
+                        "tags": [
+                            "math",
+                            "linear",
+                            "algebra"
+                        ],
+                        "classification": "Both"
+                    }
+                ]
             },
             {
-                "id": "6.08",
-                "classification": "Computers"
-            },
-            {
-                "id": "18.600",
-                "classification": "Computers"
+                "name": "Fall",
+                "classes": [
+                    {
+                        "id": "5.13",
+                        "tags": [
+                            "chemistry",
+                            "organic"
+                        ],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "5.310",
+                        "tags": [
+                            "chemistry",
+                            "lab",
+                            "laboratory",
+                            "organic",
+                            "inorganic"
+                        ],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "6.004",
+                        "tags": [
+                            "assembly",
+                            "logic",
+                            "digital",
+                            "architecture",
+                            "computer",
+                            "code",
+                            "programming"
+                        ],
+                        "classification": "Computer Science"
+                    },
+                    {
+                        "id": "6.006",
+                        "tags": [
+                            "algorithms",
+                            "data structures",
+                            "computer",
+                            "code",
+                            "programming",
+                            "analysis",
+                            "complexity"
+                        ],
+                        "classification": "Computer Science"
+                    },
+                    {
+                        "id": "20.110",
+                        "tags": [
+                            "thermo",
+                            "thermodynamics",
+                            "biology"
+                        ],
+                        "classification": "Bioengineering"
+                    }
+                ]
             }
-        ],
-        "Fall": [
+        ]
+    },
+    {
+        "year": 2020,
+        "semesters": [
             {
-                "id": "6.046",
-                "classification": "Both"
+                "name": "Spring",
+                "classes": [
+                    {
+                        "id": "6.031",
+                        "tags": [
+                            "java",
+                            "documentation",
+                            "test",
+                            "engineering",
+                            "design",
+                            "computer",
+                            "code",
+                            "programming",
+                            "multithreading"
+                        ],
+                        "classification": "Computer Science"
+                    },
+                    {
+                        "id": "6.036",
+                        "tags": [
+                            "ml",
+                            "machine",
+                            "learning",
+                            "python",
+                            "numpy",
+                            "pytorch",
+                            "regression",
+                            "neural",
+                            "network"
+                        ],
+                        "classification": "Both"
+                    },
+                    {
+                        "id": "6.08",
+                        "tags": [
+                            "c++",
+                            "python",
+                            "arduino",
+                            "hardware",
+                            "project",
+                            "computer",
+                            "code",
+                            "programming"
+                        ],
+                        "classification": "Computer Science"
+                    },
+                    {
+                        "id": "18.600",
+                        "tags": [
+                            "math",
+                            "probability",
+                            "statistics",
+                            "combinatorics",
+                            "distributions"
+                        ],
+                        "classification": "Computer Science"
+                    }
+                ]
             },
             {
-                "id": "6.172",
-                "classification": "Computers"
-            },
-            {
-                "id": "20.109",
-                "classification": "Bioengineering"
-            },
-            {
-                "id": "20.320",
-                "classification": "Bioengineering"
+                "name": "Fall",
+                "classes": [
+                    {
+                        "id": "6.046",
+                        "tags": [
+                            "algorithms",
+                            "design",
+                            "analysis",
+                            "computer"
+                        ],
+                        "classification": "Both"
+                    },
+                    {
+                        "id": "6.172",
+                        "tags": [
+                            "c",
+                            "performance",
+                            "optimization",
+                            "multithreading",
+                            "computer",
+                            "code",
+                            "programming"
+                        ],
+                        "classification": "Computer Science"
+                    },
+                    {
+                        "id": "20.109",
+                        "tags": [
+                            "biology",
+                            "lab"
+                        ],
+                        "classification": "Bioengineering"
+                    },
+                    {
+                        "id": "20.320",
+                        "tags": [
+                            "biology",
+                            "modeling",
+                            "analysis",
+                            "networks",
+                            "gene"
+                        ],
+                        "classification": "Bioengineering"
+                    }
+                ]
             }
         ]
     }
