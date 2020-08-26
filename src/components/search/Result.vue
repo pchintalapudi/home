@@ -54,7 +54,4 @@ export default Vue.extend({
 .result > :active {
   background-color: rgba(var(--fore-color), var(--level-2));
 }
-.result {
-    contain: strict;
-}
 </style>

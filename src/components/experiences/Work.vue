@@ -84,6 +84,7 @@ export default Vue.extend({
 .work {
     transition: background-color 300ms;
     border-radius: 10px;
+    padding: 10px;
 }
 .work[highlighted] {
     background-color: rgba(var(--green), 0.3);

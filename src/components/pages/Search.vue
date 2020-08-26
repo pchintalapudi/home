@@ -233,7 +233,7 @@ export default Vue.extend({
 .results {
   overflow: auto;
   flex-flow: row nowrap;
-  max-width: calc(50% + 170px * 2 + 50px * 2);
+  max-width: 100%;
   align-self: center;
   padding: 10px;
 }

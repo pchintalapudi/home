@@ -90,6 +90,7 @@ export default Vue.extend({
 .project {
   transition: background-color 300ms;
   border-radius: 10px;
+  padding: 10px;
 }
 .project[highlighted] {
   background-color: rgba(var(--yellow), 0.3);
