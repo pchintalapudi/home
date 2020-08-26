@@ -35,7 +35,4 @@ export default Vue.extend({
 h1 {
   align-items: center;
 }
-.search {
-    margin: 0 50px;
-}
 </style>

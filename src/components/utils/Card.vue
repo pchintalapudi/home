@@ -4,7 +4,7 @@
       <slot></slot>
     </icon-vue>
     <h3>{{cardTitle}}</h3>
-    <p v-if="content">{{content}}</p>
+    <p v-if="content" class="content">{{content}}</p>
   </a>
 </template>
 <script lang="ts">
@@ -46,5 +46,8 @@ export default Vue.extend({
 }
 [target].card:any-link>h3 {
     text-decoration: underline;
+}
+.content {
+    text-transform: capitalize;
 }
 </style>

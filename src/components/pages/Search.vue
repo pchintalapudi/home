@@ -1,5 +1,6 @@
 <template>
   <article class="search">
+    <h2>Looking for something specific?</h2>
     <section class="search-controls">
       <input
         type="text"
@@ -8,22 +9,25 @@
         v-model="inputText"
         @keydown.enter="inputText && possibilities.length ? filter=possibilities[0] : undefined"
       />
-      <p class="guide">Filter By:</p>
-      <filters-vue
-        :filterType="'Type'"
-        :options="['Course', 'Work Experience', 'Personal Project']"
-        :colors="['--blue', '--green', '--yellow']"
-        @select="filteringBy = $event"
-        @deselect="filteringBy = null"
-      ></filters-vue>
-      <filters-vue
-        :filterType="'Major'"
-        :options="['Bioengineering', 'Computer Science']"
-        :colors="['--green', '--red']"
-        :noshow="!(filteringBy && filteringBy.filter === 'Course')"
-        @select="major = $event"
-        @deselect="major = null"
-      ></filters-vue>
+      <p class="count">{{results.length}} results</p>
+      <section class="filters">
+        <p class="guide">Filter By:</p>
+        <filters-vue
+          :filterType="'Type'"
+          :options="['Course', 'Work Experience', 'Personal Project']"
+          :colors="['--blue', '--green', '--yellow']"
+          @select="filteringBy = $event"
+          @deselect="filteringBy = null"
+        ></filters-vue>
+        <filters-vue
+          :filterType="'Major'"
+          :options="['Bioengineering', 'Computer Science']"
+          :colors="['--green', '--red']"
+          :noshow="!(filteringBy && filteringBy.filter === 'Course')"
+          @select="major = $event"
+          @deselect="major = null"
+        ></filters-vue>
+      </section>
     </section>
     <ul class="results">
       <result-vue v-for="result in results" :key="`result-${result.id}`" v-bind="result"></result-vue>
@@ -231,13 +235,17 @@ export default Vue.extend({
   padding: 5px;
   border-radius: 5px;
   width: 50%;
+  min-width: 200px;
 }
 .results {
   overflow: auto;
   flex-flow: row nowrap;
+  max-width: calc(50% + 170px * 2 + 50px * 2);
+  align-self: center;
+  padding: 10px;
 }
 .search-controls {
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: center;
   padding: 10px;
   justify-content: center;
@@ -248,7 +256,16 @@ export default Vue.extend({
 .search {
   padding: 20px;
 }
+.filters {
+    flex-flow: row wrap;
+}
+.count {
+    padding: 10px;
+}
 [noshow] {
-    visibility: hidden;
+  visibility: hidden;
+}
+h2 {
+  text-align: center;
 }
 </style>

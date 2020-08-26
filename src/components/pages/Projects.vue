@@ -43,12 +43,12 @@ h2 {
   display: grid;
   column-gap: 15px;
   row-gap: 15px;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
   padding: 30px;
 }
 @media (max-width: 900px) {
   .projects {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 </style>

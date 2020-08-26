@@ -41,13 +41,13 @@ h2 {
 .experiences {
   display: grid;
   padding: 30px;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
   column-gap: 15px;
   row-gap: 15px;
 }
 @media (max-width: 900px) {
   .experiences {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 </style>
