@@ -1,13 +1,6 @@
 <template>
   <main :dark-mode="darkMode">
-    <nav>
-      <h1>Prem Chintalapudi</h1>
-      <span class="grow"></span>
-      <span>
-        <theme-switcher-vue class="dark-mode-switcher"></theme-switcher-vue>
-      </span>
-    </nav>
-    <search-vue></search-vue>
+    <title-vue></title-vue>
     <summary-vue></summary-vue>
     <education-vue></education-vue>
     <work-vue></work-vue>
@@ -17,7 +10,7 @@
 <script lang="ts">
 import Vue from "vue";
 import ThemeSwitcherVue from "./ThemeSwitcher.vue";
-import SearchVue from "./pages/Search.vue";
+import TitleVue from "./pages/Title.vue";
 import SummaryVue from "./pages/Summary.vue";
 import EducationVue from "./pages/Education.vue";
 import WorkVue from "./pages/Work.vue";
@@ -29,7 +22,7 @@ export default Vue.extend({
     ProjectsVue,
     EducationVue,
     WorkVue,
-    SearchVue
+    TitleVue
   },
   computed: {
     darkMode(): boolean {
@@ -127,6 +120,10 @@ h6 {
 html, input, button {
   font-family: "Merriweather", serif;
   font-size: 1em;
+}
+img {
+    display: initial;
+    object-fit: contain;
 }
 @media (max-width: 500px) {
   html {
