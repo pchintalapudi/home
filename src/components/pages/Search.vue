@@ -1,14 +1,8 @@
 <template>
   <article class="search">
-    <h2>Looking for something specific?</h2>
+    <h2><label for="tag-search">Looking for something specific?</label></h2>
     <section class="search-controls">
-      <input
-        type="text"
-        name="tag-search"
-        id="tag-search"
-        v-model="inputText"
-        @keydown.enter="inputText && possibilities.length ? filter=possibilities[0] : undefined"
-      />
+      <input type="text" name="tag-search" id="tag-search" v-model="inputText" />
       <p class="count">{{results.length}} results</p>
       <section class="filters">
         <p class="guide">Filter By:</p>
@@ -102,7 +96,6 @@ export default Vue.extend({
       filteringBy: null as { type: string; filter: string } | null,
       major: null as { type: string; filter: string } | null,
       inputText: "",
-      filter: { id: "", payload: {}, payloadType: PayloadType.CLASS },
     };
   },
   computed: {
@@ -257,10 +250,10 @@ export default Vue.extend({
   padding: 20px;
 }
 .filters {
-    flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 .count {
-    padding: 10px;
+  padding: 10px;
 }
 [noshow] {
   visibility: hidden;

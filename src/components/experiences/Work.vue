@@ -1,5 +1,5 @@
 <template>
-  <article :id="id || false" class="work">
+  <article :id="id || false" class="work" :highlighted="highlighted">
     <h3>{{role}}</h3>
     <h4>{{company}}</h4>
     <i>{{timeRange}}</i>
@@ -33,6 +33,9 @@ export default Vue.extend({
     markedDesc(): string {
       return marked(this.description, { gfm: true, breaks: true });
     },
+    highlighted():boolean {
+        return this.$store.state.highlighted === this.id;
+    }
   },
   methods: {
     toMonth(monthNumber: number) {
@@ -77,5 +80,12 @@ export default Vue.extend({
 }
 .description :any-link {
   display: inline;
+}
+.work {
+    transition: background-color 300ms;
+    border-radius: 10px;
+}
+.work[highlighted] {
+    background-color: rgba(var(--green), 0.3);
 }
 </style>

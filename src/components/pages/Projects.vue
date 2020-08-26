@@ -14,6 +14,7 @@ import Vue from "vue";
 import IconVue from "../utils/Icon.vue";
 import ProjectVue from "../experiences/Project.vue";
 interface Project {
+  id: string;
   name: string;
   description: string;
   tags: string[];
@@ -33,7 +34,7 @@ export default Vue.extend({
 </script>
 <style scoped>
 .icon {
-    align-self: center;
+  align-self: center;
 }
 h2 {
   padding: 10px;

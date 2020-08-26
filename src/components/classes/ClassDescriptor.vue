@@ -36,6 +36,7 @@ export default Vue.extend({
   transition: background-color 300ms;
   border-radius: 10px;
   box-shadow: 0 0 10px 2px #000000bb;
+  contain: strict;
 }
 .controls {
   flex-flow: row-reverse wrap;
@@ -44,6 +45,7 @@ export default Vue.extend({
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   padding: 10px;
+  transition: background-color 300ms;
 }
 .controls > * {
   width: 33px;
@@ -56,7 +58,7 @@ export default Vue.extend({
   transition: background-color 300ms;
   background-color: rgba(var(--button-color), 0.1);
   cursor: pointer;
-  color:white;
+  color: white;
 }
 .controls > *:hover {
   background-color: rgba(var(--button-color), 0.25);

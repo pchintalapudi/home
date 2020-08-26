@@ -1,6 +1,6 @@
 <template>
   <li class="result">
-    <a :href="`#${id}`">{{title}}</a>
+    <a :href="`#${id}`" @click="highlight">{{title}}</a>
   </li>
 </template>
 <script lang="ts">
@@ -15,13 +15,21 @@ export default Vue.extend({
     title(): string {
       switch (this.payloadType) {
         case 0:
-          return !this.$store.state.loading && this.$store.state.classCache[this.id] !== undefined ? this.$store.state.classCache[this.id].title : "Loading class title...";
+          return !this.$store.state.loading &&
+            this.$store.state.classCache[this.id] !== undefined
+            ? this.$store.state.classCache[this.id].title
+            : "Loading class title...";
         case 1:
           return this.payload.company + " - " + this.payload.role;
         case 2:
           return this.payload.name;
       }
       return "";
+    },
+  },
+  methods: {
+    highlight() {
+      this.$store.dispatch("highlight", this.id);
     },
   },
 });
@@ -38,11 +46,15 @@ export default Vue.extend({
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
+  transition: color 300ms;
 }
 .result > :hover {
   background-color: rgba(var(--fore-color), var(--level-1));
 }
 .result > :active {
   background-color: rgba(var(--fore-color), var(--level-2));
+}
+.result {
+    contain: strict;
 }
 </style>

@@ -13,7 +13,8 @@ export default new Vuex.Store({
         classCache: {},
         projects,
         work,
-        loading: 0
+        loading: 0,
+        highlighted: ""
     },
     mutations: {
         darkMode(state, darkMode: boolean) {
@@ -28,6 +29,16 @@ export default new Vuex.Store({
         },
         finishLoad(state) {
             state.loading--;
+        },
+        highlight(state, highlighted) {
+            state.highlighted = highlighted;
+            console.log("highlighted " + highlighted);
+        },
+        dehighlight(state, highlighted) {
+            if (state.highlighted === highlighted) {
+                console.log("dehighlighted " + highlighted);
+                state.highlighted = "";
+            }
         }
     },
     actions: {
@@ -37,6 +48,10 @@ export default new Vuex.Store({
                 commit("cacheClass", { id, cls: await (await window.fetch(`https://fireroad-dev.mit.edu/courses/lookup/${id}`)).json() });
                 commit("finishLoad");
             }
+        },
+        highlight({ commit }, highlighted) {
+            commit("highlight", highlighted);
+            window.setTimeout(() => commit("dehighlight", highlighted), 1000);
         }
     },
     modules: {

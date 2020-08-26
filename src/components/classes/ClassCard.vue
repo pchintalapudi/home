@@ -2,6 +2,7 @@
   <article
     :class="`class-card ${loading ? 'loading' : ''}`"
     :id="id"
+    :highlighted="highlighted"
     @click="$emit('describe-class', {id, term, year, title:classTitle, description:classDescription})"
   >
     <h4>{{classTitle}}</h4>
@@ -46,6 +47,9 @@ export default Vue.extend({
         ? this.classData.description
         : "Loading class description";
     },
+    highlighted():boolean {
+        return this.$store.state.highlighted === this.id;
+    }
   },
   watch: {
     id(next, old) {
@@ -79,5 +83,8 @@ export default Vue.extend({
 }
 .class-card > h4 {
   text-align: center;
+}
+.class-card[highlighted] {
+    background-color: rgba(var(--blue), 0.3);
 }
 </style>

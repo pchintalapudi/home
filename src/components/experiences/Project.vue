@@ -1,5 +1,5 @@
 <template>
-  <article class="project">
+  <article class="project" :id="id" :highlighted="highlighted">
     <h3>{{name}}</h3>
     <b>{{timeRange}}</b>
     <p class="description" v-html="markedDesc"></p>
@@ -19,6 +19,7 @@ export default Vue.extend({
     end: String,
     link: String,
     github: String,
+    id: String,
   },
   computed: {
     timeRange(): string {
@@ -49,6 +50,9 @@ export default Vue.extend({
     markedDesc(): string {
       return marked(this.description, { breaks: true, gfm: true });
     },
+    highlighted(): boolean {
+      return this.$store.state.highlighted === this.id;
+    },
   },
   methods: {
     toMonth(monthNumber: number) {
@@ -74,13 +78,20 @@ export default Vue.extend({
   opacity: 0.5;
 }
 .description {
-    margin: 10px 0;
-    display: block;
+  margin: 10px 0;
+  display: block;
 }
 .description >>> p {
-    display: initial;
+  display: initial;
 }
 .description :any-link {
-    display: inline;
+  display: inline;
+}
+.project {
+  transition: background-color 300ms;
+  border-radius: 10px;
+}
+.project[highlighted] {
+  background-color: rgba(var(--yellow), 0.3);
 }
 </style>
