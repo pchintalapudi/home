@@ -1,5 +1,5 @@
 <template>
-  <button class="track" @click="toggle">
+  <button class="track" @click="toggle" aria-label="Toggle dark mode">
     <i class="sun" :moon="darkMode"></i>
   </button>
 </template>

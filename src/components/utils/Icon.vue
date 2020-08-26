@@ -1,5 +1,5 @@
 <template>
-  <a class="icon" :style="`--scale:${scale};--margin:${margin}px;--link-color:${color};`">
+  <a class="icon" :style="`--scale:${scale};--margin:${margin}px;--link-color:${color};`" :aria-label="description||false">
     <slot></slot>
   </a>
 </template>
@@ -8,7 +8,8 @@ import Vue from "vue";
 export default Vue.extend({
   props: {
     iconScale: Number,
-    linkColor:String
+    linkColor:String,
+    description:String
   },
   computed:{
       scale():number {

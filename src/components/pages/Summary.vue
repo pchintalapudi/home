@@ -3,7 +3,12 @@
     <h2>At a Glance</h2>
     <article class="summary">
       <div class="cards">
-        <icon-vue tooltip="Education" :link-color="'var(--blue)'" href="#education">
+        <icon-vue
+          tooltip="Education"
+          :link-color="'var(--blue)'"
+          href="#education"
+          :description="'Go to Education'"
+        >
           <i class="graduation-cap"></i>
         </icon-vue>
         <card-vue
@@ -20,7 +25,12 @@
         ></card-vue>
       </div>
       <div class="cards">
-        <icon-vue tooltip="Work Experience" :linkColor="'var(--green)'" href="#work">
+        <icon-vue
+          tooltip="Work Experience"
+          :linkColor="'var(--green)'"
+          href="#work"
+          :description="'Go to Work Experience'"
+        >
           <i class="laptop"></i>
         </icon-vue>
         <card-vue
@@ -33,7 +43,12 @@
         ></card-vue>
       </div>
       <div class="cards">
-        <icon-vue tooltip="Personal Projects" href="#projects" :linkColor="'var(--yellow)'">
+        <icon-vue
+          tooltip="Personal Projects"
+          href="#projects"
+          :linkColor="'var(--yellow)'"
+          :description="'Go to Personal Projects'"
+        >
           <i class="clock"></i>
         </icon-vue>
         <card-vue
@@ -62,7 +77,7 @@
         <card-vue :card-title="'CRISPRa/i'" href="#" :linkColor="'var(--green)'"></card-vue>
         <card-vue :card-title="'Antibody Staining'" href="#" :linkColor="'var(--green)'"></card-vue>
         <card-vue :card-title="'Western Blot'" href="#" :linkColor="'var(--green)'"></card-vue>
-      </div> -->
+      </div>-->
     </article>
   </section>
 </template>
@@ -77,8 +92,8 @@ export default Vue.extend({
       return this.$store.state.work;
     },
     projects(): any[] {
-        return this.$store.state.projects;
-    }
+      return this.$store.state.projects;
+    },
   },
 });
 </script>
@@ -198,7 +213,7 @@ nav {
 .summary > .cards .icon:not([href="#skills"]) ~ .card {
   min-width: 200px;
 }
-.summary-page>h2 {
-    padding-left: 40px;
+.summary-page > h2 {
+  padding-left: 40px;
 }
 </style>

@@ -12,7 +12,12 @@
       :viewing="viewingOptions"
     >{{viewingOptions ? 'Hide Options' : 'View Options'}}</button>
     <ul class="options" v-if="viewingOptions">
-      <li v-for="(filter, idx) in options" :key="`filter-${filterType}-${filter}`" style="--link-color:var(--fore-color)" class="option">
+      <li
+        v-for="(filter, idx) in options"
+        :key="`filter-${filterType}-${filter}`"
+        style="--link-color:var(--fore-color)"
+        class="option"
+      >
         <button @click="select(filter, idx)">{{filter}}</button>
       </li>
     </ul>
@@ -59,7 +64,7 @@ button {
   padding: 10px;
   cursor: pointer;
   background-color: transparent;
-  color:rgb(var(--link-color));
+  color: rgb(var(--link-color));
 }
 button:hover {
   background-color: rgba(var(--fore-color), var(--level-1));
@@ -79,12 +84,15 @@ button:active {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-.type[selecting], .type[selecting]+.dropdown {
+.type[selecting],
+.type[selecting] + .dropdown {
   background-color: rgba(var(--fore-color), var(--level-1));
 }
 .dropdown {
   font-size: 0;
   position: relative;
+  min-width: 36px;
+  min-height: 36px;
 }
 .dropdown::after {
   content: "";
@@ -95,13 +103,13 @@ button:active {
   height: 10px;
   box-sizing: border-box;
   position: absolute;
-  transform: translate(-4.5px, 2px) rotate(45deg);
+  transform: translate(2.5px, 2px) rotate(45deg);
   transition: border-color 300ms, transform 300ms;
 }
 .dropdown[viewing]::after {
-  transform: translate(-4.5px, 8px) rotate(225deg);
+  transform: translate(2.5px, 8px) rotate(225deg);
 }
 .type {
-    width: 175px;
+  width: 175px;
 }
 </style>
