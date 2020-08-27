@@ -6,6 +6,8 @@ import work from "./work.json";
 
 Vue.use(Vuex);
 
+const classMap = new Map(classes.flatMap(year => year.semesters.flatMap(semester => semester.classes.map(cls => [cls.id, cls]))));
+
 export default new Vuex.Store({
     state: {
         darkMode: localStorage.getItem('darkMode') === 'dark',
@@ -23,6 +25,11 @@ export default new Vuex.Store({
         },
         cacheClass(state, { id, cls }: { id: string, cls: any }) {
             (state.classCache as any)[id] = cls;
+            let clz = classMap.get(id)!;
+            for (const keyword of cls.title.split(" ")) {
+                clz.tags.push(keyword.toLowerCase());
+            }
+            clz.tags = Array.from(new Set(clz.tags));
         },
         startLoad(state) {
             state.loading++;
