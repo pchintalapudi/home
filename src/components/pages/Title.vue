@@ -122,10 +122,10 @@ address>i {
   z-index: -1;
   content:"";
 }
-.easter-egg::before {
+[dark-mode] .easter-egg::before {
   background-image: url('../../assets/B6_KRAB_MSC.png');
 }
-.easter-egg::after {
+[dark-mode] .easter-egg::after {
   background-image: url('../../assets/Custom_Language.png');
 }
 .easter-egg.bioengineering::before {
