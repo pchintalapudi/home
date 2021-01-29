@@ -1,5 +1,5 @@
 <template>
-  <article id="title">
+  <article id="title" :class="['easter-egg', cs ? 'computer-science' : '', bioe ? 'bioengineering' : '']">
     <span class="top">
       <span class="grow"></span>
       <span>
@@ -10,7 +10,7 @@
       <img class="img" src="../../assets/profile.jpg" alt="A profile picture of Prem Chintalapudi" />
       <p>Prem Chintalapudi</p>
     </h1>
-    <p>Junior c/o 2022 attending MIT double majoring in Computer Science &amp; Engineering and Bioengineering</p>
+    <p class="inline">Junior c/o 2022 attending MIT double majoring in <a class="inline" href="#computers" @mouseenter="cs=true" @mouseleave="cs=false">Computer Science &amp; Engineering</a> and <a class="inline" href="#bioengineering" @mouseenter="bioe=true" @mouseleave="bioe=false">Bioengineering</a></p>
     <section class="meta">
       <address class="email">
         <p>premc</p>
@@ -50,6 +50,9 @@ import ThemeSwitcherVue from "../ThemeSwitcher.vue";
 import SearchVue from "./Search.vue";
 export default Vue.extend({
   components: { ThemeSwitcherVue, SearchVue },
+  data() {
+    return {cs:false, bioe:false};
+  }
 });
 </script>
 <style scoped>
@@ -103,5 +106,41 @@ address>i {
 }
 :any-link:active {
     opacity: 0.5;
+}
+.easter-egg {
+  position: relative;
+  z-index: 1;
+}
+.easter-egg::before, .easter-egg::after {
+  transition: opacity 300ms;
+  opacity: 0;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: -1;
+  content:"";
+}
+.easter-egg::before {
+  background-image: url('../../assets/B6_KRAB_MSC.png');
+}
+.easter-egg::after {
+  background-image: url('../../assets/Custom_Language.png');
+}
+.easter-egg.bioengineering::before {
+  filter: blur(2px);
+  opacity:0.125;
+}
+.easter-egg.computer-science::after {
+  filter: blur(1px);
+  opacity:0.25;
+}
+.heading {
+  position: relative;
+}
+.inline {
+  display: inline-block;
+  text-align: center;
 }
 </style>

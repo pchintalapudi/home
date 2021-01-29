@@ -7,9 +7,9 @@
     <h3 id="undergrad">Massacusetts Institute of Technology</h3>
     <article class="classes">
       <section class="headers">
-        <h3 class="bio" id="bioengineering">Bioengineering</h3>
-        <h3 class="both">Both</h3>
         <h3 class="cs" id="computers">Computer Science</h3>
+        <h3 class="both">Both</h3>
+        <h3 class="bio" id="bioengineering">Bioengineering</h3>
       </section>
       <article class="courses">
         <section v-for="year in correctedClasses" :key="year.year" class="empty">
@@ -19,14 +19,14 @@
             class="row"
             :upcoming="upcoming(year.year, term)"
           >
-            <section class="bio">
+            <section class="cs">
               <class-card-vue
-                v-for="cls in courses.bio"
+                v-for="cls in courses.cs"
                 :key="cls.id"
                 :year="year.year"
                 :term="term"
                 :id="cls.id"
-                @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'bio'}"
+                @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'cs'}"
               ></class-card-vue>
             </section>
             <section class="both">
@@ -39,14 +39,14 @@
                 @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'both'}"
               ></class-card-vue>
             </section>
-            <section class="cs">
+            <section class="bio">
               <class-card-vue
-                v-for="cls in courses.cs"
+                v-for="cls in courses.bio"
                 :key="cls.id"
                 :year="year.year"
                 :term="term"
                 :id="cls.id"
-                @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'cs'}"
+                @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'bio'}"
               ></class-card-vue>
             </section>
           </section>
@@ -121,16 +121,16 @@ export default Vue.extend({
       let compare = new Date();
       switch (term) {
         case "Spring":
-          compare.setFullYear(year, 6, 1);
+          compare.setFullYear(year, 5, 1);
           break;
         case "IAP":
-          compare.setFullYear(year, 2, 1);
+          compare.setFullYear(year, 1, 1);
           break;
         case "Fall":
-          compare.setFullYear(year + 1, 1, 1);
+          compare.setFullYear(year + 1, 0, 1);
           break;
         case "Summer":
-          compare.setFullYear(year, 9, 1);
+          compare.setFullYear(year, 8, 1);
           break;
         default:
           return false;

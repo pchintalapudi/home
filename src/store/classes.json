@@ -346,7 +346,76 @@
                             "modeling",
                             "analysis",
                             "networks",
-                            "gene"
+                            "differential",
+                            "equations",
+                            "matlab"
+                        ],
+                        "classification": "Bioengineering"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2021,
+        "semesters": [
+            {
+                "name": "Spring",
+                "classes": [
+                    {
+                        "id": "6.033",
+                        "tags": [
+                            "system",
+                            "networking",
+                            "engineering",
+                            "design",
+                            "computer",
+                            "programming"
+                        ],
+                        "classification": "Computer Science"
+                    },
+                    {
+                        "id": "20.330",
+                        "tags": [
+                            "biology",
+                            "modeling",
+                            "fields",
+                            "forces",
+                            "flows",
+                            "electricity",
+                            "microfluidics",
+                            "fluidics",
+                            "navier-stokes",
+                            "matlab"
+                        ],
+                        "classification": "Both"
+                    },
+                    {
+                        "id": "20.390",
+                        "tags": [
+                            "python",
+                            "ml",
+                            "machine",
+                            "learning",
+                            "numpy",
+                            "pytorch",
+                            "regression",
+                            "neural",
+                            "network",
+                            "code",
+                            "computer",
+                            "omics"
+                        ],
+                        "classification": "Both"
+                    },
+                    {
+                        "id": "20.309",
+                        "tags": [
+                            "biology",
+                            "cells",
+                            "microscope",
+                            "optics",
+                            "engineering"
                         ],
                         "classification": "Bioengineering"
                     }
