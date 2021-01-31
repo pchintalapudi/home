@@ -1,23 +1,5 @@
 [
     {
-        "id": "website",
-        "name": "This Website",
-        "description": "This website has been a work in progress since the middle of August 2020. Vue.js allows for componentizing each part of the page, and autogenerating many of the page contents from hardcoded JSON files (like these descriptions!). In the future, I hope to expand on the search functionality of the front page and migrate the JSON files to another repository to have a cleaner separation between data and view.",
-        "tags": [
-            "typescript",
-            "vue",
-            "html",
-            "css",
-            "computer",
-            "programming",
-            "code"
-        ],
-        "start": "08-2020",
-        "end": null,
-        "github": "https://github.com/pchintalapudi/home",
-        "link": "https://pchintalapudi.github.io/home"
-    },
-    {
         "id": "vm",
         "name": "Virtual Machine",
         "description": "This project, written entirely in C++, has a main goal of producing a working virtual machine using no more than the C++ standard library and a few platform-specific APIs for virtual memory and memory-mapped files (Windows-only at the moment) that implements a garbage-collected language running on a compiled bytecode. The VM and bytecode are modeled loosely off the specifications of the JVM and CLR, minus multithreading-specific instructions. While the core parts of the virtual machine are complete, its friend projects to [create a standard library](https://github.com/pchintalapudi/vm-lib) for its custom bytecode and [write a compiler](https://github.com/pchintalapudi/bcode-compiler) for that bytecode are ongoing. Thus far, the project has taught me a lot about how the JVM and CLR and other virtual machines work under the hood, and I expect the projects to continue teaching me new things for a while to come.",

@@ -122,10 +122,10 @@ address>i {
   z-index: -1;
   content:"";
 }
-[dark-mode] .easter-egg::before {
+.easter-egg::before {
   background-image: url('../../assets/B6_KRAB_MSC.png');
 }
-[dark-mode] .easter-egg::after {
+.easter-egg::after {
   background-image: url('../../assets/Custom_Language.png');
 }
 .easter-egg.bioengineering::before {
@@ -133,6 +133,14 @@ address>i {
   opacity:0.125;
 }
 .easter-egg.computer-science::after {
+  filter: blur(1px);
+  opacity:0.1875;
+}
+[dark-mode] .easter-egg.bioengineering::before {
+  filter: blur(2px);
+  opacity:0.125;
+}
+[dark-mode] .easter-egg.computer-science::after {
   filter: blur(1px);
   opacity:0.25;
 }

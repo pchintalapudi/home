@@ -1,7 +1,7 @@
 <template>
   <section class="summary-page">
-    <h2>At a Glance</h2>
     <article class="summary">
+      <h2 class="glance">At a Glance</h2>
       <div class="cards">
         <icon-vue
           tooltip="Education"
@@ -60,24 +60,6 @@
           :linkColor="'var(--yellow)'"
         ></card-vue>
       </div>
-      <!-- <div class="cards">
-        <icon-vue tooltip="Skills" :linkColor="'var(--red)'" href="#skills">
-          <i class="hammer"></i>
-        </icon-vue>
-        <card-vue :card-title="'Java'" href="#" :linkColor="'var(--red)'"></card-vue>
-        <card-vue :card-title="'Python'" href="#" :linkColor="'var(--red)'"></card-vue>
-        <card-vue :card-title="'SQL'" href="#" :linkColor="'var(--red)'"></card-vue>
-        <card-vue :card-title="'C/C++'" href="#" :linkColor="'var(--red)'"></card-vue>
-        <card-vue :card-title="'Typescript'" href="#" :linkColor="'var(--red)'"></card-vue>
-        <card-vue :card-title="'Javascript'" href="#" :linkColor="'var(--red)'"></card-vue>
-        <card-vue :card-title="'HTML/CSS'" href="#" :linkColor="'var(--red)'"></card-vue>
-        <card-vue :card-title="'Cell Culture'" href="#" :linkColor="'var(--green)'"></card-vue>
-        <card-vue :card-title="'Transfection'" href="#" :linkColor="'var(--green)'"></card-vue>
-        <card-vue :card-title="'Pipetting'" href="#" :linkColor="'var(--green)'"></card-vue>
-        <card-vue :card-title="'CRISPRa/i'" href="#" :linkColor="'var(--green)'"></card-vue>
-        <card-vue :card-title="'Antibody Staining'" href="#" :linkColor="'var(--green)'"></card-vue>
-        <card-vue :card-title="'Western Blot'" href="#" :linkColor="'var(--green)'"></card-vue>
-      </div>-->
     </article>
   </section>
 </template>
@@ -102,6 +84,9 @@ nav {
   width: 100vw;
   flex-flow: row wrap;
   padding: 10px;
+}
+.glance {
+  text-align: center;
 }
 .dark-mode-switcher {
   transform: scale(0.5, 0.5);
@@ -198,7 +183,7 @@ nav {
 .summary {
   justify-content: space-evenly;
   width: 100vw;
-  padding: 20px;
+  padding: 10px;
   flex: 1;
   align-items: stretch;
 }
@@ -212,8 +197,5 @@ nav {
 }
 .summary > .cards .icon:not([href="#skills"]) ~ .card {
   min-width: 200px;
-}
-.summary-page > h2 {
-  padding-left: 40px;
 }
 </style>
