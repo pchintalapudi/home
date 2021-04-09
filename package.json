@@ -8,18 +8,18 @@
   },
   "dependencies": {
     "marked": "^2.0.1",
-    "tslib": "^1.14.1",
+    "tslib": "^2.2.0",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "@types/marked": "^1.2.2",
-    "@vue/cli-plugin-router": "~4.5.11",
-    "@vue/cli-plugin-typescript": "~4.5.11",
-    "@vue/cli-plugin-vuex": "~4.5.11",
-    "@vue/cli-service": "~4.5.11",
-    "typescript": "~4.2.3",
+    "@types/marked": "^2.0.1",
+    "@vue/cli-plugin-router": "~4.5.12",
+    "@vue/cli-plugin-typescript": "~4.5.12",
+    "@vue/cli-plugin-vuex": "~4.5.12",
+    "@vue/cli-service": "~4.5.12",
+    "typescript": "~4.2.4",
     "vue-template-compiler": "^2.6.12"
   }
 }
