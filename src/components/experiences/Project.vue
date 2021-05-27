@@ -1,7 +1,7 @@
 <template>
   <article class="project" :id="id" :highlighted="highlighted">
-    <h3>{{name}}</h3>
-    <i>{{timeRange}}</i>
+    <h3>{{ name }}</h3>
+    <i>{{ timeRange }}</i>
     <p class="description" v-html="markedDesc"></p>
     <a :href="link" v-if="!!link">Live Demo</a>
     <a :href="github" v-if="!!github">GitHub Project</a>
@@ -20,6 +20,18 @@ export default Vue.extend({
     link: String,
     github: String,
     id: String,
+  },
+  mounted() {
+    if (!("rawHighlight" in window)) {
+      const store = this.$store;
+      //Messy hack to inject $store into dynamically generated links from marked
+      (window as any).rawHighlight = function (ev: MouseEvent) {
+        console.log("called");
+        const href = (ev.target as HTMLAnchorElement).href;
+        console.log(href);
+        store.dispatch("highlight", href.slice(href.lastIndexOf("#") + 1));
+      };
+    }
   },
   computed: {
     timeRange(): string {
@@ -48,7 +60,10 @@ export default Vue.extend({
       }
     },
     markedDesc(): string {
-      return marked(this.description, { breaks: true, gfm: true });
+      return marked(this.description, { breaks: true, gfm: true }).replaceAll(
+        '<a href="#',
+        `<a onclick='window.rawHighlight(event)' href="#`
+      );
     },
     highlighted(): boolean {
       return this.$store.state.highlighted === this.id;

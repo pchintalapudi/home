@@ -90,7 +90,7 @@ export default Vue.extend({
 .class-card > h4 {
   text-align: center;
 }
-.class-card.active[highlighted] {
+.class-card[highlighted] {
     background-color: rgba(var(--blue), 0.3);
 }
 .error {

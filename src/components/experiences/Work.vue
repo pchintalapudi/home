@@ -1,8 +1,8 @@
 <template>
   <article :id="id || false" class="work" :highlighted="highlighted">
-    <h3>{{role}}</h3>
-    <h4>{{company}}</h4>
-    <i>{{timeRange}}</i>
+    <h3>{{ role }}</h3>
+    <h4>{{ company }}</h4>
+    <i>{{ timeRange }}</i>
     <p class="description" v-html="markedDesc"></p>
   </article>
 </template>
@@ -18,6 +18,18 @@ export default Vue.extend({
     start: String,
     end: String,
   },
+  mounted() {
+    if (!("rawHighlight" in window)) {
+      const store = this.$store;
+      //Messy hack to inject $store into dynamically generated links from marked
+      (window as any).rawHighlight = function (ev: MouseEvent) {
+        console.log("called");
+        const href = (ev.target as HTMLAnchorElement).href;
+        console.log(href);
+        store.dispatch("highlight", href.slice(href.lastIndexOf("#") + 1));
+      };
+    }
+  },
   computed: {
     timeRange(): string {
       return `${this.toMonth(
@@ -31,11 +43,14 @@ export default Vue.extend({
       }`;
     },
     markedDesc(): string {
-      return marked(this.description, { gfm: true, breaks: true });
+      return marked(this.description, { gfm: true, breaks: true }).replaceAll(
+        '<a href="#',
+        `<a onclick='window.rawHighlight(event)' href="#`
+      );
     },
-    highlighted():boolean {
-        return this.$store.state.highlighted === this.id;
-    }
+    highlighted(): boolean {
+      return this.$store.state.highlighted === this.id;
+    },
   },
   methods: {
     toMonth(monthNumber: number) {
@@ -82,11 +97,11 @@ export default Vue.extend({
   display: inline;
 }
 .work {
-    transition: background-color 300ms;
-    border-radius: 10px;
-    padding: 10px;
+  transition: background-color 300ms;
+  border-radius: 10px;
+  padding: 10px;
 }
 .work[highlighted] {
-    background-color: rgba(var(--green), 0.3);
+  background-color: rgba(var(--green), 0.3);
 }
 </style>
