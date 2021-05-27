@@ -4,7 +4,7 @@
       <slot></slot>
     </icon-vue>
     <h3>{{cardTitle}}</h3>
-    <p v-if="content" class="content">{{content}}</p>
+    <p v-if="content" class="content">{{content}}<slot name="rich-content"></slot></p>
   </a>
 </template>
 <script lang="ts">

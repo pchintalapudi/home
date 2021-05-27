@@ -48,6 +48,7 @@ export default Vue.extend({
 }
 .sun {
   border: 5px solid rgb(var(--fore-color));
+  background-color: rgb(var(--fore-color));
   transition: all 300ms;
   display: block;
   position: absolute;
@@ -61,6 +62,7 @@ export default Vue.extend({
   position: absolute;
   content: "";
   border: 5px solid rgb(var(--fore-color));
+  background-color: rgb(var(--fore-color));
   transition: all 300ms;
   display: block;
   top: 0px;

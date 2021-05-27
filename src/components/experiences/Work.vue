@@ -39,7 +39,7 @@ export default Vue.extend({
   },
   methods: {
     toMonth(monthNumber: number) {
-      return new Date(2020, monthNumber, 1).toLocaleString("default", {
+      return new Date(2020, monthNumber - 1, 1).toLocaleString("default", {
         month: "long",
       });
     },

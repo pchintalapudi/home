@@ -1,7 +1,7 @@
 <template>
   <article class="project" :id="id" :highlighted="highlighted">
     <h3>{{name}}</h3>
-    <b>{{timeRange}}</b>
+    <i>{{timeRange}}</i>
     <p class="description" v-html="markedDesc"></p>
     <a :href="link" v-if="!!link">Live Demo</a>
     <a :href="github" v-if="!!github">GitHub Project</a>
@@ -56,7 +56,7 @@ export default Vue.extend({
   },
   methods: {
     toMonth(monthNumber: number) {
-      return new Date(2020, monthNumber, 1).toLocaleString("default", {
+      return new Date(2020, monthNumber - 1, 1).toLocaleString("default", {
         month: "long",
       });
     },

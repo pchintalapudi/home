@@ -56,11 +56,6 @@
                 "name": "Fall",
                 "classes": [
                     {
-                        "id": "3.986",
-                        "tags": [],
-                        "classification": "Bioengineering"
-                    },
-                    {
                         "id": "6.0001",
                         "tags": [
                             "python",
@@ -94,7 +89,7 @@
                             "math",
                             "calculus"
                         ],
-                        "classification": "Bioengineering"
+                        "classification": "Both"
                     }
                 ]
             }

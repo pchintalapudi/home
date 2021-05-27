@@ -8,54 +8,60 @@
     <article class="classes">
       <section class="headers">
         <h3 class="cs" id="computers">Computer Science</h3>
-        <h3 class="both">Both</h3>
+        <h3 class="both">Interdisciplinary</h3>
         <h3 class="bio" id="bioengineering">Bioengineering</h3>
       </section>
       <article class="courses">
-        <section v-for="year in correctedClasses" :key="year.year" class="empty">
-          <section
-            v-for="{term, courses} in year.terms"
-            :key="`${year.year}-${term}`"
-            class="row"
-            :upcoming="upcoming(year.year, term)"
-          >
-            <section class="cs">
-              <class-card-vue
-                v-for="cls in courses.cs"
-                :key="cls.id"
-                :year="year.year"
-                :term="term"
-                :id="cls.id"
-                @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'cs'}"
-              ></class-card-vue>
-            </section>
-            <section class="both">
-              <class-card-vue
-                v-for="cls in courses.both"
-                :key="cls.id"
-                :year="year.year"
-                :term="term"
-                :id="cls.id"
-                @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'both'}"
-              ></class-card-vue>
-            </section>
-            <section class="bio">
-              <class-card-vue
-                v-for="cls in courses.bio"
-                :key="cls.id"
-                :year="year.year"
-                :term="term"
-                :id="cls.id"
-                @describe-class="descriptorProps = {...$event, theme:upcoming(year.year, term)?'upcoming':'bio'}"
-              ></class-card-vue>
-            </section>
-          </section>
+        <section class="cs">
+          <class-card-vue
+            v-for="cls in csClasses"
+            :key="cls.id"
+            :year="cls.year"
+            :term="cls.sem"
+            :id="cls.id"
+            @describe-class="
+              descriptorProps = {
+                ...$event,
+                theme: upcoming(cls.year, cls.term) ? 'upcoming' : 'cs',
+              }
+            "
+          ></class-card-vue>
+        </section>
+        <section class="both">
+          <class-card-vue
+            v-for="cls in bothClasses"
+            :key="cls.id"
+            :year="cls.year"
+            :term="cls.sem"
+            :id="cls.id"
+            @describe-class="
+              descriptorProps = {
+                ...$event,
+                theme: upcoming(cls.year, cls.term) ? 'upcoming' : 'both',
+              }
+            "
+          ></class-card-vue>
+        </section>
+        <section class="bio">
+          <class-card-vue
+            v-for="cls in bioClasses"
+            :key="cls.id"
+            :year="cls.year"
+            :term="cls.sem"
+            :id="cls.id"
+            @describe-class="
+              descriptorProps = {
+                ...$event,
+                theme: upcoming(cls.year, cls.term) ? 'upcoming' : 'bio',
+              }
+            "
+          ></class-card-vue>
         </section>
         <transition name="descriptor">
           <class-descriptor-vue
             :class="descriptorProps.theme"
             v-bind="descriptorProps"
-            @close-descriptor="descriptorProps.id=''"
+            @close-descriptor="descriptorProps.id = ''"
             v-if="descriptorProps.id && descriptorProps.title"
           ></class-descriptor-vue>
         </transition>
@@ -89,13 +95,28 @@ export default Vue.extend({
     correctedClasses(): any[] {
       return this.classes.map((year_obj) => {
         return {
-          year:year_obj.year,
+          year: year_obj.year,
           terms: year_obj.semesters.map((sem: any) => ({
             term: sem.name,
             courses: this.typeSplit(sem.classes),
           })),
         };
       });
+    },
+    bioClasses(): any[] {
+      return this.correctedClasses.flatMap((yr) =>
+        yr.terms.flatMap((sem: any) => sem.courses.bio.map((c:any) => ({...c, year:yr.year, sem:sem.term})))
+      ).reverse();
+    },
+    csClasses(): any[] {
+      return this.correctedClasses.flatMap((yr) =>
+        yr.terms.flatMap((sem: any) => sem.courses.cs.map((c:any) => ({...c, year:yr.year, sem:sem.term})))
+      ).reverse();
+    },
+    bothClasses(): any[] {
+      return this.correctedClasses.flatMap((yr) =>
+        yr.terms.flatMap((sem: any) => sem.courses.both.map((c:any) => ({...c, year:yr.year, sem:sem.term})))
+      ).reverse();
     },
   },
   methods: {
@@ -144,10 +165,14 @@ export default Vue.extend({
 h2 {
   padding: 10px;
 }
+#undergrad {
+  padding-bottom: 20px;
+}
 .headers {
   flex-flow: row nowrap;
   align-self: stretch;
   padding: 10px 0;
+  font-size: 1.25em;
 }
 .headers > * {
   width: 33%;
@@ -155,13 +180,9 @@ h2 {
   color: rgb(var(--link-color));
   transition: color 300ms;
 }
-.classes {
-  align-self: stretch;
-  position: relative;
-}
 .courses {
-  flex-flow: column-reverse nowrap;
-  padding: 10px 0;
+  flex-flow: row nowrap;
+  padding: 10px 20px;
 }
 #education {
   align-items: center;
@@ -169,20 +190,9 @@ h2 {
 .empty {
   display: contents;
 }
-.row {
-  flex-flow: row nowrap;
-  align-self: stretch;
-  justify-content: space-evenly;
-}
-.row > * {
-  width: 33%;
-  align-items: center;
-  justify-content: center;
-  flex-flow: row wrap;
-  padding: 5px;
-}
-.row > * > .class-card {
-  flex-basis: 50%;
+.class-card {
+  flex: 1;
+  flex-basis: calc(50% - 20px);
   min-width: 150px;
 }
 .bio {
@@ -193,6 +203,12 @@ h2 {
 }
 .cs {
   --link-color: var(--red);
+}
+.courses > section {
+  flex-flow: row wrap;
+  flex-basis: 33%;
+  padding: 0 20px;
+  gap: 10px;
 }
 .upcoming,
 [upcoming] > * {
@@ -224,7 +240,7 @@ h2 {
 .descriptor-enter, .descriptor-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-.courses > * > [upcoming] {
+.courses [upcoming] {
   background-color: rgba(var(--blue), 0.125);
 }
 </style>

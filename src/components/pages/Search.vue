@@ -14,7 +14,7 @@
           @deselect="filteringBy = null"
         ></filters-vue>
         <filters-vue
-          :filterType="'Major'"
+          :filterType="'Majors'"
           :options="['Bioengineering', 'Computer Science']"
           :colors="['--green', '--red']"
           :noshow="!(filteringBy && filteringBy.filter === 'Course')"

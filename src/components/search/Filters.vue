@@ -5,7 +5,7 @@
       :selecting="viewingOptions"
       :style="`--link-color:var(${linkColor})`"
       @click="selectedOption === -1 ? viewingOptions=!viewingOptions : deselect()"
-    >{{selectedOption === -1 ? (options.length > 2 ? 'Any ' : 'Either ') + filterType : options[selectedOption]}}</button>
+    >{{selectedOption === -1 ? (options.length > 2 ? 'Any ' : 'Both ') + filterType : options[selectedOption]}}</button>
     <button
       class="dropdown"
       @click="viewingOptions=!viewingOptions"

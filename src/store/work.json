@@ -1,5 +1,37 @@
 [
     {
+        "id":"julia",
+        "company":"JuliaLab",
+        "role":"Undergraduate Researcher",
+        "start":"03-2021",
+        "end":"05-2021",
+        "tags":[
+            "julia",
+            "compiler",
+            "c++",
+            "c",
+            "optimization",
+            "performance",
+            "llvm",
+            "pull"
+        ],
+        "supervisors": [
+            {
+                "title": "Professor",
+                "name": "Alan Edelman"
+            },
+            {
+                "title": "Supervisor",
+                "name": "Valentin Churavy"
+            },
+            {
+                "title": "Mentor",
+                "name": "Takafumi Arakaki"
+            }
+        ],
+        "description": "Building off my past experiences in [performance engineering](#6.172) and outlining a [virtual machine](#vm)"
+    },
+    {
         "id":"docai",
         "company": "doc.ai",
         "role": "Software Engineering Intern",

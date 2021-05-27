@@ -1,11 +1,12 @@
 <template>
   <article
-    :class="`class-card ${loading ? 'loading' : ''}`"
+    :class="['class-card', error ? 'error' : loading ? 'loading' : 'active']"
     :id="id"
     :highlighted="highlighted"
-    @click="$emit('describe-class', {id, term, year, title:classTitle, description:classDescription})"
+    :title="error && 'Failed to load full class information, do you have an unstable network?'"
+    @click="!error && $emit('describe-class', {id, term, year, title:classTitle, description:classDescription})"
   >
-    <h4>{{classTitle}}</h4>
+    <h4>{{error ? id : classTitle}}</h4>
     <b>{{id}}</b>
   </article>
 </template>
@@ -24,10 +25,14 @@ export default Vue.extend({
     id: String,
   },
   data() {
-    return { changed: false };
+    return { changed: false, error:true };
   },
   async mounted() {
-    await this.$store.dispatch("getClassData", this.id);
+    try {
+      await this.$store.dispatch("getClassData", this.id);
+    } catch {
+      this.error = true;
+    }
     this.changed = !this.changed;
   },
   computed: {
@@ -66,25 +71,29 @@ export default Vue.extend({
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
+  background-color: rgba(var(--fore-color), var(--level-2));
 }
 .loading {
   cursor: default;
   pointer-events: none;
 }
-.class-card:hover {
-  background-color: rgba(var(--fore-color), var(--level-1));
+.class-card.active:hover {
+  background-color: rgba(var(--fore-color), var(--level-4));
 }
-.class-card:active {
-  background-color: rgba(var(--fore-color), var(--level-2));
+.class-card.active:active {
+  background-color: rgba(var(--fore-color), var(--level-5));
 }
-.class-card:hover > h4 {
+.class-card.active:hover > h4 {
   transition: color 300ms;
   color: rgb(var(--link-color));
 }
 .class-card > h4 {
   text-align: center;
 }
-.class-card[highlighted] {
+.class-card.active[highlighted] {
     background-color: rgba(var(--blue), 0.3);
+}
+.error {
+  cursor:not-allowed;
 }
 </style>

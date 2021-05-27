@@ -40,7 +40,11 @@
           :content="exp.company"
           :href="`#${exp.id}`"
           :linkColor="'var(--green)'"
-        ></card-vue>
+        >
+          <template v-slot:rich-content>
+            <p class="date">{{ d2s(exp.start) }} - {{ d2s(exp.end) }}</p>
+          </template>
+        </card-vue>
       </div>
       <div class="cards">
         <icon-vue
@@ -58,7 +62,8 @@
           :content="project.tags[0]"
           :href="`#${project.id}`"
           :linkColor="'var(--yellow)'"
-        ></card-vue>
+        >
+        </card-vue>
       </div>
     </article>
   </section>
@@ -77,9 +82,39 @@ export default Vue.extend({
       return this.$store.state.projects;
     },
   },
+  methods: {
+    d2s(d: string | null) {
+      if (!d) {
+        return "Present";
+      }
+      const parts = d.split("-");
+      const month = +parts[0] - 1;
+      const year = +parts[1];
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      return `${months[month]} ${year}`;
+    },
+  },
 });
 </script>
 <style>
+.date {
+  font-style: italic;
+  text-transform: none;
+  padding: 5px;
+}
 nav {
   width: 100vw;
   flex-flow: row wrap;
@@ -90,10 +125,6 @@ nav {
 }
 .dark-mode-switcher {
   transform: scale(0.5, 0.5);
-}
-
-.summary-page {
-  min-height: 100vh;
 }
 .laptop::before {
   content: "";
@@ -117,7 +148,7 @@ nav {
   bottom: 0;
   border: 9px solid rgb(var(--green));
   border-radius: 5px;
-  transform: scale(0.5625, 0.5) translateY(17.5px) rotate3d(1, 0, 0, 67.5deg);
+  transform: scale(0.5625, 0.5) translateY(17.5px) rotate3d(1, 0, 0, 70deg);
   transition: border-color 300ms, background-color 300ms;
 }
 .graduation-cap::before {
@@ -137,7 +168,7 @@ nav {
   height: 10px;
   width: 20px;
   background-color: rgb(var(--blue));
-  box-shadow: -7.5px 5.5px 0 0px rgb(var(--track-color));
+  box-shadow: -7.5px 5.5px 0 0px rgb(var(--mask-color));
   transition: background-color 300ms, box-shadow 300ms;
   transform: translate(-10px, 10px) rotate(-10deg) skewX(60deg)
     rotate3d(1, 0, 0, 45deg);
@@ -183,7 +214,7 @@ nav {
 .summary {
   justify-content: space-evenly;
   width: 100vw;
-  padding: 10px;
+  padding: 10vh 10px;
   flex: 1;
   align-items: stretch;
 }
@@ -191,11 +222,14 @@ nav {
   flex-flow: row nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  min-height: 88px;
+  min-height: 150px;
   flex: 1;
   align-items: center;
 }
 .summary > .cards .icon:not([href="#skills"]) ~ .card {
   min-width: 200px;
+}
+.date {
+  font-size: 0.75em;
 }
 </style>

@@ -67,7 +67,8 @@ main {
   --back-color: 255, 255, 255;
   --fore-color: 0, 0, 0;
   --text-color: 0, 0, 0;
-  --track-color: 244, 244, 244;
+  --track-color: 200, 200, 200;
+  --mask-color: 244, 244, 244;
   --level-1: 0.05;
   --level-2: 0.07;
   --level-3: 0.08;
@@ -97,7 +98,8 @@ button {
 main[dark-mode] {
   --back-color: 18, 18, 18;
   --fore-color: 222, 222, 222;
-  --track-color: 29, 29, 29;
+  --track-color: 50, 50, 50;
+  --mask-color: 29, 29, 29;
   --text-color: 153, 153, 153;
   --blue: 0, 136, 255;
   --green: 8, 242, 142;

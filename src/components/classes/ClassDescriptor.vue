@@ -46,6 +46,7 @@ export default Vue.extend({
   border-top-left-radius: 10px;
   padding: 10px;
   transition: background-color 300ms;
+  align-self: stretch;
 }
 .controls > * {
   width: 33px;
