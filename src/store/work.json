@@ -29,7 +29,7 @@
                 "name": "Takafumi Arakaki"
             }
         ],
-        "description": "Building off my past experiences in [performance engineering](#6.172) and outlining a [virtual machine](#vm)"
+        "description": "Building off my past experiences in [performance engineering](#6.172) and outlining a [virtual machine](#vm), I worked in MIT's JuliaLab to improve the Julia compiler. Over the course of a semester I extended some of the Julia-specific passes in the runtime's compiler's LLVM optimization pipeline to minimize allocations. Specifically, I implemented multiple optimizations, including adjusting the code generator to avoid emitting useless instructions, hoisting allocations and write barriers out of loops, and teaching the compiler to hoist allocations out of specific branch idioms."
     },
     {
         "id":"docai",
