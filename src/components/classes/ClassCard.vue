@@ -30,6 +30,7 @@ export default Vue.extend({
   async mounted() {
     try {
       await this.$store.dispatch("getClassData", this.id);
+      this.error = false;
     } catch {
       this.error = true;
     }
